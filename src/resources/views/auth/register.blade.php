@@ -15,6 +15,7 @@
             <h2 class="register_text">Registration</h2>
         </div>
         <form class="register-form" action="{{ route("register") }}" method="POST">
+            @csrf
             <div class="form-group">
                 <img class="logo-img" src="{{ asset("images/username.png") }}" alt="">
                 <input type="text" id="name" name="name" placeholder="Username" required>

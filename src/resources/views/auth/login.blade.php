@@ -15,6 +15,7 @@
             <h2 class="login_text">Login</h2>
         </div>
         <form class="login-form" action="{{ route("login") }}" method="POST">
+            @csrf
             <div class="form-group">
                 <img class="logo-img" src="{{ asset("images/email.png") }}" alt="">
                 <input type="email" id="email" name="email" placeholder="Email" required>

@@ -12,6 +12,10 @@
         <div class="logo_div">
             <h2 class="logo">Rase</h2>
         </div>
+        <form method="POST" action="{{ route("logout") }}">
+            @csrf
+            <button class="logout-button">ログアウト</button>
+        </form>
         @if(Request::routeIs(route("shop-list")))
         <div class=search_div>
 

@@ -1,0 +1,56 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 960px;
+}
+
+
+.card-container {
+    display: grid;
+    flex: 1 1 calc(25% - 10px);
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 260px;
+}
+
+.shop-img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 120px;
+}
+
+.shop-name {
+    margin-top: 0px;
+    padding-left: 15px;
+}
+
+.shop-region-and-genre {
+    color: #939393;
+    margin-top: -10px;
+    padding-left: 15px;
+}
+
+.detail-button {
+    background-color: #3560F6;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+
+
