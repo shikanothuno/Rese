@@ -16,4 +16,14 @@ class Shop extends Model
         "description",
         "image_url",
     ];
+
+    public function favorite()
+    {
+        return $this->belongsTo(Favorite::class);
+    }
+
+    public function reservation()
+    {
+        return $this->belongsTo(Reservation::class);
+    }
 }
