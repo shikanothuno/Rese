@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware("auth")->controller(ShopController::class)->group(function(){
     Route::get("/","index")->name("shop-list");
     Route::get("/{shop}/detail","detail")->name("shop-detail");
+    Route::post("/{shop}/detail","store")->name("store");
 });
 
 require __DIR__.'/auth.php';
