@@ -10,15 +10,28 @@
     </head>
     <body>
         <div class="logo_div">
-            <h2 class="logo">Rase</h2>
+            <h2 class="logo">Rese</h2>
         </div>
         <form method="POST" action="{{ route("logout") }}">
             @csrf
             <button class="logout-button">ログアウト</button>
         </form>
-        @if(Request::routeIs(route("shop-list")))
+        @if(Route::currentRouteName() == "shop-list")
         <div class=search_div>
-
+            <form id="search-form" action="{{ route("shop-list") }}"></form>
+            <select name="region" id="region" onchange="document.getElementById('search-form').submit()">
+                <option value="">All area</option>
+                @foreach ($regions as $region)
+                    <option value="{{ $region->id }}" {{ old('region', $select_region) == $region->name ? 'selected' : '' }}>{{ $region->name }}</option>
+                @endforeach
+            </select>
+            <select name="genre" id="genre" onchange="document.getElementById('search-form').submit()">
+                <option value="">All genre</option>
+                @foreach ($genres as $genre)
+                    <option value="{{ $genre->id }}" {{ old('genre', $select_genre) == $genre->name ? 'selected' : '' }}>{{ $genre->name }}</option>
+                @endforeach
+            </select>
+            <input type="text" placeholder="Search ...">
         </div>
         @endif
 

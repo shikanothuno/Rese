@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Genre;
+use App\Models\Region;
 use App\Models\Reservation;
 use App\Models\Shop;
 use DateTime;
@@ -11,12 +13,22 @@ use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $shops = Shop::all();
-        $user = Auth::user();
+        $select_region = $request->input("region");
+        $select_genre = $request->input("genre");
 
-        return view("shop-list",compact("shops","user"));
+        if(empty($select_genre)&&empty($select_region)){
+            $shops = Shop::all();
+        }else{
+            $shops = Shop::where("region","=",$select_region)->where("genre","=",$select_genre)->get()->all();
+        }
+
+        $user = Auth::user();
+        $genres = Genre::all();
+        $regions = Region::all();
+
+        return view("shop-list",compact("shops","user","genres","regions","select_region","select_genre"));
     }
 
     public function detail($shop_id)
