@@ -10,6 +10,6 @@ class Region extends Model
     use HasFactory;
 
     protected $fillable = [
-        "region"
+        "name"
     ];
 }
