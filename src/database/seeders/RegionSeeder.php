@@ -65,7 +65,7 @@ class RegionSeeder extends Seeder
 
         foreach($regions as $region){
             Region::create([
-                "region" => $region,
+                "name" => $region,
             ]);
         }
     }
