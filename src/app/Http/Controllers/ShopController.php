@@ -37,6 +37,11 @@ class ShopController extends Controller
             "reservation_date_and_time" => $reservation_date_and_time->format("Y-m-d H:i:s"),
         ]);
 
-        return redirect(route("thanks"));
+        return redirect(route("done"));
+    }
+
+    public function done()
+    {
+        return view("done");
     }
 }
