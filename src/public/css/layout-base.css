@@ -6,6 +6,48 @@ body {
     width: 1920px;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.search_div {
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影の設定 */
+    display: flex;
+    height: 50px;
+}
+
+.region__select {
+    border: none;
+    border-right: 1px solid #EEEEEE;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.genre__select {
+    border: none;
+    border-right: 1px solid #EEEEEE;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.search-button {
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 20px;
+}
+
+.search__input {
+    border: none;
+    font-size: 18px;
+    padding: 5px;
+}
+
 .logo_div{
     position: relative;
 
