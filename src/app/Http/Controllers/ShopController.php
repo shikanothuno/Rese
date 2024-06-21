@@ -10,6 +10,7 @@ use App\Models\Shop;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
 {
@@ -17,12 +18,22 @@ class ShopController extends Controller
     {
         $select_region = $request->input("region");
         $select_genre = $request->input("genre");
+        $search_text = $request->input("search");
 
-        if(empty($select_genre)&&empty($select_region)){
-            $shops = Shop::all();
-        }else{
-            $shops = Shop::where("region","=",$select_region)->where("genre","=",$select_genre)->get()->all();
+        Log::debug($search_text);
+
+        $shops = Shop::query();
+        if(!empty($select_genre)){
+            $shops = $shops->where("genre","=",$select_genre);
         }
+        if(!empty($select_region)){
+            $shops = $shops->where("region","=",$select_region);
+        }
+        if(!empty($search_text)){
+            $shops = $shops->where("name","LIKE","%{$search_text}%");
+        }
+
+        $shops = $shops->get();
 
         $user = Auth::user();
         $genres = Genre::all();

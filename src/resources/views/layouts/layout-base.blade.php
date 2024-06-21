@@ -20,21 +20,24 @@
             </form>
             @if(Route::currentRouteName() == "shop-list")
             <div class=search_div>
-                <form class="search=form" id="search-form" action="{{ route("shop-list") }}"></form>
-                <select class="region__select" name="region" id="region" onchange="document.getElementById('search-form').submit()">
-                    <option value="">All area</option>
-                    @foreach ($regions as $region)
-                        <option value="{{ $region->id }}" {{ old('region', $select_region) == $region->name ? 'selected' : '' }}>{{ $region->name }}</option>
-                    @endforeach
-                </select>
-                <select class="genre__select" name="genre" id="genre" onchange="document.getElementById('search-form').submit()">
-                    <option value="">All genre</option>
-                    @foreach ($genres as $genre)
-                        <option value="{{ $genre->id }}" {{ old('genre', $select_genre) == $genre->name ? 'selected' : '' }}>{{ $genre->name }}</option>
-                    @endforeach
-                </select>
-                <img class="search-button" src="{{ asset("images/search.png") }}" alt="">
-                <input class="search__input" type="text" placeholder="Search ...">
+                <form class="search=form" id="search-form" action="{{ route("shop-list") }}">
+                    @csrf
+
+                    <select class="region__select" name="region" id="region" onchange="document.getElementById('search-form').submit()">
+                        <option value="">All area</option>
+                        @foreach ($regions as $region)
+                            <option value="{{ $region->name }}" {{ old('region', $select_region) == $region->name ? 'selected' : '' }}>{{ $region->name }}</option>
+                        @endforeach
+                    </select>
+                    <select class="genre__select" name="genre" id="genre" onchange="document.getElementById('search-form').submit()">
+                        <option value="">All genre</option>
+                        @foreach ($genres as $genre)
+                            <option value="{{ $genre->name }}" {{ old('genre', $select_genre) == $genre->name ? 'selected' : '' }}>{{ $genre->name }}</option>
+                        @endforeach
+                    </select>
+                    <img class="search-button" src="{{ asset("images/search.png") }}" alt="">
+                    <input class="search__input" id="search" name="search" type="text" placeholder="Search ...">
+                </form>
             </div>
             @endif
         </div>
