@@ -17,13 +17,13 @@ class Shop extends Model
         "image_url",
     ];
 
-    public function favorite()
+    public function favorites()
     {
-        return $this->belongsTo(Favorite::class);
+        return $this->hasMany(Favorite::class);
     }
 
-    public function reservation()
+    public function reservations()
     {
-        return $this->belongsTo(Reservation::class);
+        return $this->hasMany(Reservation::class);
     }
 }

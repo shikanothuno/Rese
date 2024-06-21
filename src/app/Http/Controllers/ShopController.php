@@ -40,6 +40,7 @@ class ShopController extends Controller
     public function store(Request $request,$shop_id)
     {
         $request->session()->regenerateToken();
+
         $reservation_date_and_time = new DateTime($request->input("date") . " " .
         $request->input("time"));
         Reservation::create([
@@ -55,5 +56,21 @@ class ShopController extends Controller
     public function done()
     {
         return view("done");
+    }
+
+    public function myPage()
+    {
+        $user = Auth::user();
+        $user_id = Auth::user()->id;
+        $reservations = Reservation::where("user_id","=",$user_id)->get()->all();
+        $favorites = Favorite::where("user_id","=",$user_id)->get()->all();
+        $shops = array();
+        for ($i = 0;$i < count($favorites);$i++){
+            $shops[] = Shop::find($favorites[$i]->shop_id);
+        }
+
+
+        return view("my-page",compact("reservations","shops","user"));
+
     }
 }
