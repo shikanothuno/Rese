@@ -6,7 +6,7 @@ main {
 }
 
 .shop-detail {
-    width: 810px;
+    width: 610px;
 }
 
 .shop-detail-header {
@@ -38,7 +38,7 @@ main {
 }
 
 .shop-img__div img {
-    width: 810px;
+    width: 610px;
 }
 
 .shop-region-and-genre {
@@ -57,24 +57,57 @@ main {
     display: flex;
     flex-direction: column;
     padding: 0;
-    width: 810px;
+    width: 610px;
 }
 
 .title {
     color: white;
     font-size: 32px;
-    padding-top: 60px;
+    padding-top: 40px;
     padding-left: 40px;
+    padding-bottom: 20px;
 }
 
 .reservation-form {
     padding-left: 40px;
 }
 
+.date {
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.time {
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+.people {
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
 .reservation-detail {
+    background-color: #5580F7;
+    border-radius: 5px;
+    display: flex;
     padding-left: 40px;
 }
 
+.reservation-detail__table td {
+    color: white;
+    padding-bottom: 10px;
+    padding-right: 40px;
+}
 
 
 

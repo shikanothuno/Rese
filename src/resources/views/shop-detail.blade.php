@@ -34,14 +34,15 @@
             <input class="time" type="time" id="time" name="time" value="{{ old("time") }}" required>
             <br>
             <select class="people" id="people" name="number_of_people_booked">
-            </form>
+                <option value="">--選択してください。--</option>
                 @for ($i = 1; $i <= 20; $i++)
                     <option value={{ $i }}>{{ $i . "人" }}</option>
                 @endfor
             </select>
+        </form>
             <br>
             <div class="reservation-detail"></div>
-                <table>
+                <table class="reservation-detail__table">
                     <tr>
                         <td>Shop</td>
                         <td>{{ $shop->name }}</td>
@@ -56,7 +57,7 @@
                     </tr>
                     <tr>
                         <td>Number</td>
-                        <td><span id="people-preview"></span></td>
+                        <td><span id="people-preview"></span>人</td>
                     </tr>
                 </table>
 
