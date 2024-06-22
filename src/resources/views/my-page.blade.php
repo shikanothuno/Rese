@@ -53,9 +53,20 @@
         </div>
         <div class="favorite-shops">
             <div class="title">お気に入り店舗</div>
-            @foreach ($shops as $shop)
-
+            <div class="shop-list">
+                @foreach ($shops as $shop)
+                <div class="shop-card">
+                    <img class="shop-image" src="{{ asset($shop->image_url) }}" alt="">
+                    <div class="shop-name">{{ $shop->name }}</div>
+                    <div class="shop-region-and-genre">{{ "#" . $shop->region . " " . "#" . $shop->genre }}</div>
+                    <div class="shop-footor">
+                        <a class="shop-detail-button" href="{{ route("shop-detail",$shop->id) }}">詳しくみる</a>
+                        <img class="favorite-button" id="favorite-button" src="{{ asset("images/favorite_on.png") }}" alt="">
+                    </div>
+                </div>
             @endforeach
+            </div>
+
         </div>
     </div>
 </main>

@@ -74,10 +74,10 @@ class ShopController extends Controller
         $user = Auth::user();
         $user_id = Auth::user()->id;
         $reservations = Reservation::where("user_id","=",$user_id)->get()->all();
-        $favorites = Favorite::where("user_id","=",$user_id)->get()->all();
+        $favorites = Favorite::where("user_id","=",$user_id)->get();
         $shops = array();
         for ($i = 0;$i < count($favorites);$i++){
-            $shops[] = Shop::find($favorites[$i]->shop_id);
+            $shops[] = $favorites[$i]->shop;
         }
 
 

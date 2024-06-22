@@ -14,7 +14,7 @@
 .resevation-info {
     margin-left: 150px;
     margin-right: 150px;
-    width: 750px;
+    width: 600px;
 }
 
 .reservation-infos {
@@ -65,15 +65,68 @@
     padding-bottom: 20px;
 }
 
-
-
-.title {
-    font-size: 32px;
-}
-
 .favorite-shops {
     padding-right: 150px;
     width: 720px;
 }
 
+.title {
+    font-size: 32px;
+    padding-bottom: 20px;
+}
 
+.shop-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.shop-card {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.shop-image {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+    width: 300px;
+}
+
+.shop-name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.shop-region-and-genre {
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.shop-footor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop-detail-button {
+    background-color: #3560F6;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.favorite-button {
+    height: 40px;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 40px;
+}
