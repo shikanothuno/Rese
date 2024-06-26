@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReservationRequest;
 use App\Models\Reservation;
 use DateTime;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 
 class ReservationController extends Controller
 {
-    public function store(Request $request,$shop_id)
+    public function store(ReservationRequest $request,$shop_id)
     {
         $request->session()->regenerateToken();
 

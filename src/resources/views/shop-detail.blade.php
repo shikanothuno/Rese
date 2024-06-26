@@ -25,7 +25,7 @@
     <div class="reservation">
         <div class="title">予約</div>
         @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
+            <li class="error-message">{{ $error }}</li>
         @endforeach
         <form class="reservation-form" id="reservation-form" action="{{ route("reservation.store",$shop->id) }}" method="POST">
             @csrf
