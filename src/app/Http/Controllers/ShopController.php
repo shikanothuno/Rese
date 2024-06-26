@@ -48,22 +48,6 @@ class ShopController extends Controller
         return view("shop-detail",compact("shop"));
     }
 
-    public function store(Request $request,$shop_id)
-    {
-        $request->session()->regenerateToken();
-
-        $reservation_date_and_time = new DateTime($request->input("date") . " " .
-        $request->input("time"));
-        Reservation::create([
-            "user_id" => Auth::user()->id,
-            "shop_id" => $shop_id,
-            "number_of_people_booked" => $request->input("number_of_people_booked"),
-            "reservation_date_and_time" => $reservation_date_and_time->format("Y-m-d H:i:s"),
-        ]);
-
-        return redirect(route("done"));
-    }
-
     public function done()
     {
         return view("done");

@@ -27,7 +27,7 @@
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
         @endforeach
-        <form class="reservation-form" id="reservation-form" action="{{ route("store",$shop->id) }}" method="POST">
+        <form class="reservation-form" id="reservation-form" action="{{ route("reservation.store",$shop->id) }}" method="POST">
             @csrf
             <input class="date" type="date" id="date" name="date" value="{{ old("date") }}" required>
             <br>

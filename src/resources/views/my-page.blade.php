@@ -10,6 +10,8 @@
 
 @section('content')
 <main>
+    <div id="reservation-number" data-number="{{ count($reservations) }}"></div>
+    <div id="favorite-number" data-number="{{ count($shops) }}"></div>
     <div class="mypage-header">
         <div class="user-name">{{ $user->name }}さん</div>
     </div>
@@ -25,7 +27,7 @@
                             <div class="reservation-index">予約{{ $loop->iteration }}</div>
                         </div>
                         <div class="info-header-right">
-                            <img class="close-button" id="close-button" data-number="{{ $loop->index }}" src="{{ asset("images/close_button.png") }}" alt="">
+                            <img class="close-button" data-number="{{ $loop->index }}" data-id="{{ $reservation->id }}" src="{{ asset("images/close_button.png") }}" alt="">
                         </div>
                     </div>
                     <div class="info">
@@ -61,7 +63,7 @@
                     <div class="shop-region-and-genre">{{ "#" . $shop->region . " " . "#" . $shop->genre }}</div>
                     <div class="shop-footor">
                         <a class="shop-detail-button" href="{{ route("shop-detail",$shop->id) }}">詳しくみる</a>
-                        <img class="favorite-button" id="favorite-button" src="{{ asset("images/favorite_on.png") }}" alt="">
+                        <img class="favorite-button" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_on.png") }}" alt="">
                     </div>
                 </div>
             @endforeach
@@ -71,12 +73,6 @@
     </div>
 </main>
 
-<script>
-    document.getElementById("close-button").addEventListener("click",function(){
-        var close_button = document.getElementById("close-button");
-        var close_button_number = close_button.dataset.number;
-        console.log(close_button_number);
-    });
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{ asset("js/my-page.js") }}"></script>
 @endsection
