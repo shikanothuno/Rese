@@ -105,13 +105,31 @@ main {
     background-color: #5580F7;
     border-radius: 5px;
     display: flex;
-    padding-left: 40px;
+    margin-left: 40px;
+    margin-right: 60px;
+}
+
+.reservation-detail__table {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .reservation-detail__table td {
     color: white;
     padding-bottom: 10px;
     padding-right: 40px;
+}
+
+.submit-button {
+    background-color: #003FF5;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: auto;
+    padding: 15px 20px;
 }
 
 

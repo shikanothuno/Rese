@@ -41,7 +41,7 @@
             </select>
         </form>
             <br>
-            <div class="reservation-detail"></div>
+            <div class="reservation-detail">
                 <table class="reservation-detail__table">
                     <tr>
                         <td>Shop</td>
@@ -60,6 +60,7 @@
                         <td><span id="people-preview"></span>人</td>
                     </tr>
                 </table>
+            </div>
 
         <button class="submit-button" onclick="document.getElementById('reservation-form').submit()">予約する</button>
     </div>
