@@ -10,15 +10,40 @@
         @yield('css')
     </head>
     <body>
-        <div class="header-white-space"></div>
+        <div class="full-screen-menu" id="full-screen-menu">
+            <div class="close-button" id="close-button">×</div>
+            @auth
+                <nav class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="{{ route("shop-list") }}">Home</a></li>
+                    <li class="nav-item"><form method="POST" action="{{ route("logout") }}">
+                        @csrf
+                        <button class="logout-button">Logout</button>
+                    </form></li>
+                    <li class="nav-item"><a href="{{ route("mypage") }}">Mypage</a></li>
+                </nav>
+            @endauth
+
+            @guest
+                <nav class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="{{ route("shop-list") }}">Home</a></li>
+                    <li class="nav-item"><a href="{{ route("register") }}">Registration</a></li>
+                    <li class="nav-item"><a href="{{ route("login") }}">Login</a></li>
+                </nav>
+            @endguest
+        </div>
         <div class="header">
-            <div class="logo_div">
-                <h2 class="logo">Rese</h2>
+            <div class="header-left">
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="line medium"></div>
+                    <div class="line long"></div>
+                    <div class="line short"></div>
+                </div>
+
+                <div class="logo_div">
+                    <h2 class="logo">Rese</h2>
+                </div>
             </div>
-            <form method="POST" action="{{ route("logout") }}">
-                @csrf
-                <button class="logout-button">ログアウト</button>
-            </form>
+
             @if(Route::currentRouteName() == "shop-list")
             <div class=search_div>
                 <form class="search=form" id="search-form" action="{{ route("shop-list") }}">
@@ -45,6 +70,7 @@
 
 
         @yield('content')
+        <script src="{{ asset("js/layout-base.js") }}"></script>
     </body>
 
 

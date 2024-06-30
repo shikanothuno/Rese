@@ -20,12 +20,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware("auth")->controller(ShopController::class)->group(function(){
+Route::controller(ShopController::class)->group(function(){
     Route::get("/","index")->name("shop-list");
     Route::get("/{shop}/detail","detail")->name("shop-detail");
-    Route::post("/{shop}/detail","store")->name("store");
+    Route::post("/{shop}/detail","store")->middleware("auth")->name("store");
     Route::get("/done","done")->name("done");
-    Route::get("/mypage","myPage")->name("mypage");
+    Route::get("/mypage","myPage")->middleware("auth")->name("mypage");
 });
 
 Route::middleware("auth")->controller(ReservationController::class)->group(function(){

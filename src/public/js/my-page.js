@@ -1,6 +1,6 @@
 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-const reservations = document.querySelectorAll(".close-button");
+const reservations = document.querySelectorAll(".delete-button");
 reservations.forEach(reservation => {
     reservation.addEventListener("click",function(){
         const reservation_id = reservation.dataset.id;
