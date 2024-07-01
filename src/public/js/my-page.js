@@ -9,18 +9,23 @@ reservations.forEach(reservation => {
                 "X-CSRF-TOKEN":csrfToken
             }
         });
-
+        setTimeout(function(){
+            location.reload();
+        },1000);
     });
 });
 const favorites = document.querySelectorAll(".favorite-button");
 favorites.forEach(favorite => {
     favorite.addEventListener("click",function(){
         const shop_id =favorite.dataset.id;
-        axios.delete("/"+ shop_id + "/delete",{},{
+        axios.delete("/"+ shop_id + "/favorite-delete",{},{
             headers:{
                 "X-CSRF-TOKEN":csrfToken
             }
         });
+        setTimeout(function(){
+            location.reload();
+        },1000);
     });
 });
 
