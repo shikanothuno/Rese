@@ -1,9 +1,9 @@
 body {
     background-color: #EEEEEE;
     margin: 0;
+    max-width: 1920px;
     overflow-x: auto;
     padding: 0;
-    width: 1920px;
 }
 
 .full-screen-menu {
@@ -142,5 +142,4 @@ body {
 
 .logo_div{
     position: relative;
-
 }
