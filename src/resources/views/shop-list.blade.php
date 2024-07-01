@@ -20,6 +20,11 @@
             <div class="card-footer">
                 <a href="{{ route("shop-detail",$shop->id) }}"
                      class="detail-button">詳しくみる</a>
+                @if ($favorites && $favorites->contains('shop_id', $shop->id))
+                    <img class="favorite" id="favorite-on" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_on.png") }}" alt="">
+                @else
+                    <img class="favorite" id="favorite-off" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_off.png") }}" alt="">
+                @endif
             </div>
 
         </div>

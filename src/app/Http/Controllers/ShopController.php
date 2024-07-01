@@ -7,10 +7,8 @@ use App\Models\Genre;
 use App\Models\Region;
 use App\Models\Reservation;
 use App\Models\Shop;
-use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
 {
@@ -20,7 +18,6 @@ class ShopController extends Controller
         $select_genre = $request->input("genre");
         $search_text = $request->input("search");
 
-        Log::debug($search_text);
 
         $shops = Shop::query();
         if(!empty($select_genre)){
@@ -39,7 +36,13 @@ class ShopController extends Controller
         $genres = Genre::all();
         $regions = Region::all();
 
-        return view("shop-list",compact("shops","user","genres","regions","select_region","select_genre"));
+        if(!is_null($user)){
+            $favorites = Favorite::where("user_id","=",$user->id)->get();
+        }else{
+            $favorites = collect();
+        }
+
+        return view("shop-list",compact("shops","user","genres","regions","select_region","select_genre","favorites"));
     }
 
     public function detail($shop_id)
