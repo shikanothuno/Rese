@@ -16,7 +16,7 @@
             <img class="shop-img" src="{{ $shop->image_url }}" alt="">
             <h3 class="shop-name">{{ $shop->name }}</h3>
             <h4 class="shop-region-and-genre">
-                {{ "#" . $shop->region . " " . "#" . $shop->genre }}</h4>
+                {{ "#" . $shop->region->name . " " . "#" . $shop->genre->name }}</h4>
             <div class="card-footer">
                 <a href="{{ route("shop-detail",$shop->id) }}"
                      class="detail-button">詳しくみる</a>

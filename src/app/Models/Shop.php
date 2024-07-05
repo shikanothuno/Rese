@@ -11,8 +11,8 @@ class Shop extends Model
 
     protected $fillable = [
         "name",
-        "region",
-        "genre",
+        "region_id",
+        "genre_id",
         "description",
         "image_url",
     ];
@@ -31,4 +31,16 @@ class Shop extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
+    }
+
+
 }

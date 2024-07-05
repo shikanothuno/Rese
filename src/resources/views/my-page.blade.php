@@ -60,7 +60,7 @@
                 <div class="shop-card">
                     <img class="shop-image" src="{{ asset($shop->image_url) }}" alt="">
                     <div class="shop-name">{{ $shop->name }}</div>
-                    <div class="shop-region-and-genre">{{ "#" . $shop->region . " " . "#" . $shop->genre }}</div>
+                    <div class="shop-region-and-genre">{{ "#" . $shop->region->name . " " . "#" . $shop->genre->name }}</div>
                     <div class="shop-footor">
                         <a class="shop-detail-button" href="{{ route("shop-detail",$shop->id) }}">詳しくみる</a>
                         <img class="favorite-button" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_on.png") }}" alt="">

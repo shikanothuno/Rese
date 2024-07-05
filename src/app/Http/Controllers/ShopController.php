@@ -21,10 +21,10 @@ class ShopController extends Controller
 
         $shops = Shop::query();
         if(!empty($select_genre)){
-            $shops = $shops->where("genre","=",$select_genre);
+            $shops = $shops->where("genre_id","=",$select_genre);
         }
         if(!empty($select_region)){
-            $shops = $shops->where("region","=",$select_region);
+            $shops = $shops->where("region_id","=",$select_region);
         }
         if(!empty($search_text)){
             $shops = $shops->where("name","LIKE","%{$search_text}%");

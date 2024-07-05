@@ -52,13 +52,13 @@
                     <select class="region__select" name="region" id="region" onchange="document.getElementById('search-form').submit()">
                         <option value="">All area</option>
                         @foreach ($regions as $region)
-                            <option value="{{ $region->name }}" {{ old('region', $select_region) == $region->name ? 'selected' : '' }}>{{ $region->name }}</option>
+                            <option value="{{ $region->id }}" {{ old('region', $select_region) == $region->id ? 'selected' : '' }}>{{ $region->name }}</option>
                         @endforeach
                     </select>
                     <select class="genre__select" name="genre" id="genre" onchange="document.getElementById('search-form').submit()">
                         <option value="">All genre</option>
                         @foreach ($genres as $genre)
-                            <option value="{{ $genre->name }}" {{ old('genre', $select_genre) == $genre->name ? 'selected' : '' }}>{{ $genre->name }}</option>
+                            <option value="{{ $genre->id }}" {{ old('genre', $select_genre) == $genre->id ? 'selected' : '' }}>{{ $genre->name }}</option>
                         @endforeach
                     </select>
                     <img class="search-button" src="{{ asset("images/search.png") }}" alt="">

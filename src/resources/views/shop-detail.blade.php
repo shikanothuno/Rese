@@ -19,7 +19,7 @@
             <img src="{{ asset($shop->image_url) }}" alt="">
         </div>
         <div class="shop-region-and-genre">
-            {{ "#" . $shop->region . " " . "#" . $shop->genre }}</div>
+            {{ "#" . $shop->region->name . " " . "#" . $shop->genre->name }}</div>
         <div class="shop-description">{{ $shop->description }}</div>
     </div>
     <div class="reservation">

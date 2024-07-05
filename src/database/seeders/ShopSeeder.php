@@ -32,49 +32,11 @@ class ShopSeeder extends Seeder
     ];
 
     protected $shop_regions  = [
-        "東京都",
-        "大阪府",
-        "福岡県",
-        "東京都",
-        "福岡県",
-        "東京都",
-        "大阪府",
-        "東京都",
-        "大阪府",
-        "東京都",
-        "大阪府",
-        "福岡県",
-        "東京都",
-        "大阪府",
-        "東京都",
-        "大阪府",
-        "東京都",
-        "東京都",
-        "福岡県",
-        "大阪府"
+        13, 27, 40, 13, 40, 13, 27, 13, 27, 13, 27, 40, 13, 27, 13, 27, 13, 13, 40, 27
     ];
 
     protected $shop_genres = [
-        "寿司",
-        "焼肉",
-        "居酒屋",
-        "イタリアン",
-        "ラーメン",
-        "焼肉",
-        "イタリアン",
-        "ラーメン",
-        "居酒屋",
-        "寿司",
-        "焼肉",
-        "焼肉",
-        "居酒屋",
-        "寿司",
-        "ラーメン",
-        "居酒屋",
-        "寿司",
-        "焼肉",
-        "イタリアン",
-        "寿司"
+        1, 2, 3, 4, 5, 2, 4, 5, 3, 1, 2, 2, 3, 1, 5, 3, 1, 2, 4, 1
     ];
 
     protected $shop_descriptions = [
@@ -132,8 +94,8 @@ class ShopSeeder extends Seeder
         for($i = 0;$i < 20;$i++){
             Shop::create([
                 "name" => $this->shop_names[$i],
-                "region" => $this->shop_regions[$i],
-                "genre" => $this->shop_genres[$i],
+                "region_id" => $this->shop_regions[$i],
+                "genre_id" => $this->shop_genres[$i],
                 "description" => $this->shop_descriptions[$i],
                 "image_url" => $this->shop_image_urls[$i],
             ]);
