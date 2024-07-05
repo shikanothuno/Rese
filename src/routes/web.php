@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CreateStoreRepresentativeController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
@@ -35,6 +37,14 @@ Route::middleware("auth")->controller(ReservationController::class)->group(funct
 Route::controller(FavoriteController::class)->group(function(){
     Route::post("/{shop}/favorite-store","store")->name("favorite.store");
     Route::delete("/{shop}/favorite-delete","delete")->name("favorite.delete");
+});
+
+Route::controller(AdminController::class)->middleware(["auth","admin"])->group(function(){
+    Route::get("/admin","admin")->name("admin.admin");
+});
+
+Route::controller(CreateStoreRepresentativeController::class)->middleware(["auth","admin"])->group(function(){
+    Route::post("/admin","store")->name("admin.store");
 });
 
 require __DIR__.'/auth.php';

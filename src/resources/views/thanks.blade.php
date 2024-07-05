@@ -15,6 +15,7 @@
           <p class="message">会員登録ありがとうございます</p>
           <a href="{{ route("login") }}" class="login-button">ログインする</a>
         </div>
+    </div>
 </main>
 @endsection
 

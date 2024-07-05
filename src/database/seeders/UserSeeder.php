@@ -30,6 +30,7 @@ class UserSeeder extends Seeder
             "is_general_user" => false,
             "is_store_representative" => true,
             "is_admin" => false,
+            "shop_id" => 1,
         ]);
 
         for($i = 0;$i < 100;$i++){

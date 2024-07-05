@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -56,5 +57,35 @@ class User extends Authenticatable
     public function reservations()
     {
         return $this->hasMany(Reservation::class);
+    }
+
+    public function shop()
+    {
+        return $this->hasOne(Shop::class);
+    }
+
+    public static function createGeneralUser($name, $email, $password)
+    {
+        User::create([
+            "name" => $name,
+            "email" => $email,
+            "password" => Hash::make($password),
+            "is_general_user" => true,
+            "is_store_representative" => false,
+            "is_admin" => false,
+        ]);
+    }
+
+    public static function createStoreRepresentative($name, $email, $password, $shop_id)
+    {
+        User::create([
+            "name" => $name,
+            "email" => $email,
+            "password" => Hash::make($password),
+            "is_general_user" => false,
+            "is_store_representative" => true,
+            "is_admin" => false,
+            "shop_id" => $shop_id,
+        ]);
     }
 }
