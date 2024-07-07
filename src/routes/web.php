@@ -32,6 +32,8 @@ Route::controller(ShopController::class)->group(function(){
 Route::middleware("auth")->controller(ReservationController::class)->group(function(){
     Route::post("/{shop}/detail","store")->name("reservation.store");
     Route::delete("/{reservation}/delete","delete")->name("reservation.delete");
+    Route::get("/{reservation}/edit","edit")->name("reservation.edit");
+    Route::put("/{reservation}","update")->name("reservation.update");
 });
 
 Route::controller(FavoriteController::class)->group(function(){

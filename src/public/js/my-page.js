@@ -14,6 +14,7 @@ reservations.forEach(reservation => {
         },1000);
     });
 });
+
 const favorites = document.querySelectorAll(".favorite-button");
 favorites.forEach(favorite => {
     favorite.addEventListener("click",function(){
@@ -28,4 +29,5 @@ favorites.forEach(favorite => {
         },1000);
     });
 });
+
 

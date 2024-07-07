@@ -27,7 +27,10 @@
                             <div class="reservation-index">予約{{ $loop->iteration }}</div>
                         </div>
                         <div class="info-header-right">
-                            <img class="delete-button" data-number="{{ $loop->index }}" data-id="{{ $reservation->id }}" src="{{ asset("images/close_button.png") }}" alt="">
+                            <a href="{{ route("reservation.edit",$reservation->id) }}"><img class="update-button"
+                                 src="{{ asset("images/update_button.png") }}" alt=""></a>
+
+                            <img class="delete-button" data-id="{{ $reservation->id }}" src="{{ asset("images/close_button.png") }}" alt="">
                         </div>
                     </div>
                     <div class="info">
