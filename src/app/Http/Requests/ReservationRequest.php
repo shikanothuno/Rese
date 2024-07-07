@@ -22,9 +22,17 @@ class ReservationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "people" => "required",
+            "number_of_people_booked" => "required",
             "date" => "required",
             "time" => "required",
+        ];
+
+    }
+
+    public function messages()
+    {
+        return[
+            "number_of_people_booked.required" => "人数は必ず指定してください。"
         ];
     }
 }
