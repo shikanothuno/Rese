@@ -24,6 +24,7 @@ class User extends Authenticatable
         "is_general_user",
         "is_store_representative",
         "is_admin",
+        "shop_id",
     ];
 
     /**
