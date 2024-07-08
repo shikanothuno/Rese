@@ -20,6 +20,12 @@
                         <button class="logout-button">Logout</button>
                     </form></li>
                     <li class="nav-item"><a href="{{ route("mypage") }}">Mypage</a></li>
+                    @if (Auth::user()->is_admin)
+                        <li class="nav-item"><a href="{{ route("admin.admin") }}">Admin</a></li>
+                    @endif
+                    @if (Auth::user()->is_store_representative)
+                        <li class="nav-item"><a href="{{ route("store-representative",Auth::user()->shop_id) }}">StoreRepresentative</a></li>
+                    @endif
                 </nav>
             @endauth
 
