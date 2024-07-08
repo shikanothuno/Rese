@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Reservation;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class StoreRepresentativeMiddleware
+class ReservationUserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,10 +16,10 @@ class StoreRepresentativeMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $shop_id = $request->route("shop_id");
+        $reservation_id = $request->route("reservation");
+        $reservation = Reservation::find($reservation_id)->where("user_id","=",auth()->user()->id)->get()->all();
 
-        if(auth()->check() && auth()->user()->is_store_representative &&
-        auth()->user()->shop_id == $shop_id){
+        if(auth()->check() && !empty($reservation)){
             return $next($request);
         }
         return redirect(route("shop-list"));

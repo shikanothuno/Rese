@@ -31,11 +31,11 @@ Route::controller(ShopController::class)->group(function(){
     Route::get("/mypage","myPage")->middleware("auth")->name("mypage");
 });
 
-Route::middleware("auth")->controller(ReservationController::class)->group(function(){
-    Route::post("/{shop}/detail","store")->name("reservation.store");
-    Route::delete("/{reservation}/delete","delete")->name("reservation.delete");
-    Route::get("/{reservation}/edit","edit")->name("reservation.edit");
-    Route::put("/{reservation}","update")->name("reservation.update");
+Route::controller(ReservationController::class)->group(function(){
+    Route::post("/{shop}/detail","store")->middleware("auth")->name("reservation.store");
+    Route::delete("/{reservation}/delete","delete")->middleware(["auth","reservation.user"])->name("reservation.delete");
+    Route::get("/{reservation}/edit","edit")->middleware(["auth","reservation.user"])->name("reservation.edit");
+    Route::put("/{reservation}","update")->middleware(["auth","reservation.user"])->name("reservation.update");
 });
 
 Route::controller(FavoriteController::class)->group(function(){
