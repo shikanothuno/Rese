@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CreateShopInfoContorller;
 use App\Http\Controllers\CreateStoreRepresentativeController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\StoreRepresentativeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -47,6 +49,14 @@ Route::controller(AdminController::class)->middleware(["auth","admin"])->group(f
 
 Route::controller(CreateStoreRepresentativeController::class)->middleware(["auth","admin"])->group(function(){
     Route::post("/admin","store")->name("admin.store");
+});
+
+Route::controller(StoreRepresentativeController::class)->middleware(["auth","store.representative"])->group(function(){
+    Route::get("/shop/{shop_id}/store-representative","storeRepresentative")->name("store-representative");
+});
+
+Route::controller(CreateShopInfoContorller::class)->middleware(["auth","store.representative"])->group(function(){
+    Route::put("/shop/{shop_id}","update")->name("store-representative.update");
 });
 
 require __DIR__.'/auth.php';

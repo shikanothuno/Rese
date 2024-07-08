@@ -42,5 +42,15 @@ class Shop extends Model
         return $this->belongsTo(Region::class);
     }
 
+    public static function updateShopInfo($shop, $name, $region_id, $genre_id, $description, $image_url)
+    {
+        $shop->name = $name;
+        $shop->region_id = $region_id;
+        $shop->genre_id = $genre_id;
+        $shop->description = $description;
+        $shop->image_url = $image_url;
+        $shop->save();
+    }
+
 
 }

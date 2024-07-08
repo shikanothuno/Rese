@@ -15,7 +15,9 @@ class StoreRepresentativeMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->check() && auth()->user()->is_store_representative){
+        $shop_id = $request->route("shop_id");
+        if(auth()->check() && auth()->user()->is_store_representative &&
+        auth()->user()->shop_id == $shop_id){
             return $next($request);
         }
         return redirect(route("shop-list"));
