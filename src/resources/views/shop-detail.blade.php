@@ -36,7 +36,7 @@
             <select class="people" id="people" name="number_of_people_booked">
                 <option value="">--選択してください。--</option>
                 @for ($i = 1; $i <= 20; $i++)
-                    <option value={{ $i }}>{{ $i . "人" }}</option>
+                    <option value={{ $i }} {{ $i == old("number_of_people_booked") ? 'selected' : '' }}>{{ $i . "人" }}</option>
                 @endfor
             </select>
         </form>

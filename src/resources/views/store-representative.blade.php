@@ -24,7 +24,7 @@
                     <td>
                         <select name="region_id" id="">
                             @foreach ($regions as $region)
-                                <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                <option value="{{ $region->id }}" {{ $region->id == $shop->region_id ? 'selected' : '' }}>{{ $region->name }}</option>
                             @endforeach
                         </select>
                     </td>
@@ -34,7 +34,7 @@
                     <td>
                         <select name="genre_id" id="">
                             @foreach ($genres as $genre)
-                                <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                                <option value="{{ $genre->id }}" {{ $genre->id == $shop->genre_id ? 'selected' : '' }}>{{ $genre->name }}</option>
                             @endforeach
                         </select>
                     </td>
