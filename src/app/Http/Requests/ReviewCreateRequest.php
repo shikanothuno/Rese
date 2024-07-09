@@ -22,7 +22,18 @@ class ReviewCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "shop_id" => ["required", "exists:regions,id"],
+            "rating" => ["required"],
+            "comment" => ["required", "string"],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            "shop_id.required" => "店名は必ず指定してください。",
+            "rating.required" => "評価は必ず指定してください。",
+            "comment.required" => "コメントは必ず指定してください。",
         ];
     }
 }

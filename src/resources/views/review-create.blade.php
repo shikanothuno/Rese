@@ -11,14 +11,18 @@
 @section('content')
 <main>
     <div class="container">
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
         <form method="POST" action="{{ route("reviews.store") }}">
             @csrf
             <table>
                 <tr>
                     <td>店名</td>
                     <td><select name="shop_id" id="">
+                        <option value="">--選んでください--</option>
                         @foreach ($shops as $shop)
-                            <option value="{{ $shop->id }}">{{ $shop->name }}</option>
+                            <option value="{{ $shop->id }}" {{ $shop->id == old("shop_id") ? 'selected' : '' }}>{{ $shop->name }}</option>
                         @endforeach
                     </select></td>
                 </tr>
@@ -27,11 +31,11 @@
                     <td>
                         <select name="rating" id="">
                             <option value="">--選んでください--</option>
-                            <option value="1">★</option>
-                            <option value="2">★★</option>
-                            <option value="3">★★★</option>
-                            <option value="4">★★★★</option>
-                            <option value="5">★★★★★</option>
+                            <option value="1" {{ 1 == old("rating") ? 'selected' : '' }}>★</option>
+                            <option value="2" {{ 2 == old("rating") ? 'selected' : '' }}>★★</option>
+                            <option value="3" {{ 3 == old("rating") ? 'selected' : '' }}>★★★</option>
+                            <option value="4" {{ 4 == old("rating") ? 'selected' : '' }}>★★★★</option>
+                            <option value="5" {{ 5 == old("rating") ? 'selected' : '' }}>★★★★★</option>
                         </select>
                     </td>
                 </tr>
