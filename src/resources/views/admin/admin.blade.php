@@ -13,6 +13,9 @@
     <div class="container">
         <form class="input-form" action="{{ route("admin.store") }}" method="POST">
             @csrf
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
             <table>
                 <tr>
                     <td>名前</td>
