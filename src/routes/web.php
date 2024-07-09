@@ -6,6 +6,7 @@ use App\Http\Controllers\CreateStoreRepresentativeController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\StoreRepresentativeController;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,12 @@ Route::controller(StoreRepresentativeController::class)->middleware(["auth","sto
 
 Route::controller(CreateShopInfoContorller::class)->middleware(["auth","store.representative"])->group(function(){
     Route::put("/shop/{shop_id}","update")->name("store-representative.update");
+});
+
+Route::controller(ReviewController::class)->group(function(){
+    Route::get("/reviews/{shop_id}/show","show")->name("reviews.show");
+    Route::get("/reviews/create","create")->middleware("auth")->name("reviews.create");
+    Route::post("/reviews/create","store")->middleware("auth")->name("reviews.store");
 });
 
 require __DIR__.'/auth.php';

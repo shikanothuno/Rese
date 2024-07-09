@@ -65,6 +65,11 @@ class User extends Authenticatable
         return $this->hasOne(Shop::class);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public static function createGeneralUser($name, $email, $password)
     {
         User::create([

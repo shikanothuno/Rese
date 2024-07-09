@@ -42,6 +42,11 @@ class Shop extends Model
         return $this->belongsTo(Region::class);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public static function updateShopInfo($shop, $name, $region_id, $genre_id, $description, $image_url)
     {
         $shop->name = $name;
