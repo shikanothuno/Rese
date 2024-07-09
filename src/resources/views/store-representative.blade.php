@@ -14,6 +14,9 @@
         <form class="input-form" action="{{ route("store-representative.update",$shop->id) }}" method="POST">
             @csrf
             @method("PUT")
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
             <table>
                 <tr>
                     <td>店名</td>

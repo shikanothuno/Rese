@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateShopInfoRequest;
+use App\Http\Requests\UpdateShopInfoRequest;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 
-class CreateShopInfoContorller extends Controller
+class UpdateShopInfoController extends Controller
 {
-    public function update(CreateShopInfoRequest $request, $shop_id)
+    public function update(UpdateShopInfoRequest $request, $shop_id)
     {
         $shop = Shop::find($shop_id);
         $request->session()->regenerateToken();

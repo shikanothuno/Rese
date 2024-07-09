@@ -9,6 +9,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\StoreRepresentativeController;
+use App\Http\Controllers\UpdateShopInfoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -54,7 +55,7 @@ Route::controller(StoreRepresentativeController::class)->middleware(["auth","sto
     Route::get("/shop/{shop_id}/store-representative","storeRepresentative")->name("store-representative");
 });
 
-Route::controller(CreateShopInfoContorller::class)->middleware(["auth","store.representative"])->group(function(){
+Route::controller(UpdateShopInfoController::class)->middleware(["auth","store.representative"])->group(function(){
     Route::put("/shop/{shop_id}","update")->name("store-representative.update");
 });
 
