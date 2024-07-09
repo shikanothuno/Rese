@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public static function createGeneralUser($name, $email, $password)
     {
-        User::create([
+        $user = User::create([
             "name" => $name,
             "email" => $email,
             "password" => Hash::make($password),
@@ -80,6 +80,8 @@ class User extends Authenticatable
             "is_store_representative" => false,
             "is_admin" => false,
         ]);
+
+        return $user;
     }
 
     public static function createStoreRepresentative($name, $email, $password, $shop_id)
