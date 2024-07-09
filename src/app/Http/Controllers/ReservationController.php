@@ -39,7 +39,7 @@ class ReservationController extends Controller
         return view("edit",compact("reservation"));
     }
 
-    public function update(Request $request,$reservation_id)
+    public function update(ReservationRequest $request,$reservation_id)
     {
         $request->session()->regenerateToken();
 

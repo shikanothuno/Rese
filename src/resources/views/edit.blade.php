@@ -12,6 +12,9 @@
 <main>
 
     <div class="container">
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
         <form method="POST" action="{{ route("reservation.update", $reservation->id) }}">
             @method("PUT")
             @csrf
@@ -30,7 +33,6 @@
                     <td>予約人数</td>
                     <td>
                         <select class="people" id="people" name="number_of_people_booked">
-                            <option value="">--選択してください。--</option>
                             @for ($i = 1; $i <= 20; $i++)
                                 <option value={{ $i }} {{ $i == $reservation->number_of_people_booked ? 'selected' : '' }}>{{ $i . "人" }}</option>
                             @endfor
