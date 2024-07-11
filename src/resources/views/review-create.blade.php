@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset("css/review-list.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/review-create.css") }}">
 @endsection
 
 @section('content')
@@ -14,11 +14,11 @@
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
         @endforeach
-        <form method="POST" action="{{ route("reviews.store") }}">
+        <form class="review-form" method="POST" action="{{ route("reviews.store") }}">
             @csrf
             <table>
                 <tr>
-                    <td>店名</td>
+                    <td class="label">店名</td>
                     <td><select name="shop_id" id="">
                         <option value="">--選んでください--</option>
                         @foreach ($shops as $shop)
@@ -27,7 +27,7 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td>評価</td>
+                    <td class="label">評価</td>
                     <td>
                         <select name="rating" id="">
                             <option value="">--選んでください--</option>
@@ -40,11 +40,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>コメント</td>
+                    <td class="label">コメント</td>
                     <td><textarea name="comment" id="" cols="30" rows="10">{{ old("comment") }}</textarea></td>
                 </tr>
             </table>
-            <button type="submit">作成</button>
+            <button class="submit-button" type="submit">作成</button>
         </form>
     </div>
 </main>
