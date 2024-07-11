@@ -18,19 +18,19 @@
             @endforeach
             <table>
                 <tr>
-                    <td>名前</td>
+                    <td class="label">名前</td>
                     <td><input class="input-name" type="text" name="name" value="{{ old("name") }}"></td>
                 </tr>
                 <tr>
-                    <td>メールアドレス</td>
+                    <td class="label">メールアドレス</td>
                     <td><input class="input-email" type="email" name="email" value="{{ old("email") }}"></td>
                 </tr>
                 <tr>
-                    <td>パスワード</td>
+                    <td class="label">パスワード</td>
                     <td><input class="input-password" type="password" name="password"></td>
                 </tr>
                 <tr>
-                    <td>店名</td>
+                    <td class="label">店名</td>
                     <td>
                         <select name="shop_id" id="shop_id">
                             <option value="">--選んでください--</option>
@@ -42,10 +42,7 @@
                 </tr>
             </table>
 
-
-
-
-            <button type="submit">作成</button>
+            <button class="submit-button" type="submit">作成</button>
 
         </form>
     </div>
