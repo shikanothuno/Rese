@@ -1,0 +1,35 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    align-items: center;
+    background-color: #3560F6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px;
+    text-align: center;
+}
+
+table td {
+    text-align: left;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.label {
+    color: white;
+}
+
+.submit-button {
+    background-color: #003FF5;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: auto;
+    width: 100%;
+}

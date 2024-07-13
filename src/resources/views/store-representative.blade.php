@@ -19,11 +19,11 @@
             @endforeach
             <table>
                 <tr>
-                    <td>店名</td>
+                    <td class="label">店名</td>
                     <td><input type="text" name="name" value="{{ $shop->name }}"></td>
                 </tr>
                 <tr>
-                    <td>Region</td>
+                    <td class="label">Region</td>
                     <td>
                         <select name="region_id" id="">
                             @foreach ($regions as $region)
@@ -33,7 +33,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Genre</td>
+                    <td class="label">Genre</td>
                     <td>
                         <select name="genre_id" id="">
                             @foreach ($genres as $genre)
@@ -43,15 +43,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>説明</td>
+                    <td class="label">説明</td>
                     <td><textarea name="description" id="" cols="30" rows="10">{{ $shop->description }}</textarea></td>
                 </tr>
                 <tr>
-                    <td>画像URL</td>
+                    <td class="label">画像URL</td>
                     <td><input type="text" name="image_url" value="{{ $shop->image_url }}"></td>
                 </tr>
             </table>
-            <button type="submit">更新</button>
+            <button class="submit-button" type="submit">更新</button>
 
         </form>
     </div>
