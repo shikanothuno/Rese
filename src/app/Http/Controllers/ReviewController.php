@@ -13,7 +13,8 @@ class ReviewController extends Controller
 {
     public function show($shop_id)
     {
-        $reviews = Review::where("shop_id","=",$shop_id)->get()->all();
+        $review_limit = 10;
+        $reviews = Review::where("shop_id","=",$shop_id)->latest()->paginate($review_limit);
         $shop = Shop::find($shop_id);
 
         return view("review-list",compact("shop","reviews"));

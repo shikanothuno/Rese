@@ -10,28 +10,32 @@
 
 @section('content')
 <main>
+    <h2 class="shop-name">{{ $shop->name }}</h2>
     <div class="container">
-        <h2 class="shop-name">{{ $shop->name }}</h2>
-        @foreach ($reviews as $review)
-            <table>
-                <tr>
-                    <td>評価</td>
-                    <td>
-                        @for ($i = 1; $i <=5 ; $i++)
-                            @if ($i <= $review->rating)
-                                <span class="star">★</span>
-                            @else
-                                <span class="star">☆</span>
-                            @endif
-                        @endfor
-                    </td>
-                </tr>
-                <tr>
-                    <td>コメント</td>
-                    <td>{!! nl2br($review->comment) !!}</td>
-                </tr>
-            </table>
-        @endforeach
+        <div class="review-container">
+            @foreach ($reviews as $review)
+                <div class="review-card">
+                    <table>
+                        <tr>
+                            <td class="label">評価</td>
+                            <td class="review">
+                                @for ($i = 1; $i <=5 ; $i++)
+                                    @if ($i <= $review->rating)
+                                        <span class="star">★</span>
+                                    @else
+                                        <span class="star">☆</span>
+                                    @endif
+                                @endfor
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">コメント</td>
+                            <td class="review">{!! nl2br($review->comment) !!}</td>
+                        </tr>
+                    </table>
+                </div>
+            @endforeach
+        </div>
     </div>
 </main>
 @endsection

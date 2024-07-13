@@ -1,0 +1,38 @@
+main {
+    display: flex;
+}
+
+.shop-name {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 150px;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding-left: 200px;
+    text-align: center;
+    width: 800px;
+}
+
+.review-card {
+    padding: 10px;
+}
+
+.label {
+    width: 100px;
+}
+
+.review {
+    width: 700px;
+}
+
+table td {
+    text-align: left;
+    padding: 5px;
+    vertical-align: top;
+}
+
