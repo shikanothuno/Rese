@@ -5,6 +5,7 @@ use App\Http\Controllers\CreateShopInfoContorller;
 use App\Http\Controllers\CreateStoreRepresentativeController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
@@ -63,6 +64,10 @@ Route::controller(ReviewController::class)->group(function(){
     Route::get("/reviews/{shop_id}/show","show")->name("reviews.show");
     Route::get("/reviews/create","create")->middleware("auth")->name("reviews.create");
     Route::post("/reviews/create","store")->middleware("auth")->name("reviews.store");
+});
+
+Route::controller(QRCodeController::class)->middleware("auth")->group(function(){
+    Route::get("{reservation}/qrcode","makeQRCode")->name("qrcode");
 });
 
 require __DIR__.'/auth.php';
