@@ -41,7 +41,7 @@
 }
 
 .clock {
-    width: 40px;
+    width: 50px;
 }
 
 .reservation-index {
@@ -53,6 +53,10 @@
 
 .delete-button {
     margin-right: 40px;
+    width: 40px;
+}
+
+.update-button {
     width: 40px;
 }
 
@@ -132,4 +136,70 @@
     margin-top: 20px;
     margin-right: 20px;
     width: 40px;
+}
+
+@media (max-width: 768px){
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 768px;
+    }
+
+    .user-name {
+        font-size: 28px;
+        padding-left: 50px;
+        text-align: left;
+    }
+
+    .resevation-info {
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 400px;
+    }
+
+    .reservation-infos {
+        width: 400px;
+    }
+
+    .info-header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .clock {
+        display: none;
+    }
+
+    .reservation-index {
+        font-size: 16px;
+        padding-top: 8px;
+        padding-left: 20px;
+    }
+
+    .favorite-shops {
+        padding-right: 0px;
+        margin-left: 50px;
+        width: 768px;
+    }
+
+    .info {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .info__table td{
+        font-size: 14px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+
+    .shop-list {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
 }
