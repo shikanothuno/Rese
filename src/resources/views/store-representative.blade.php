@@ -54,7 +54,9 @@
             <button class="submit-button" type="submit">更新</button>
 
         </form>
+
     </div>
+    <a href="{{ route("email.write") }}">お知らせメール作成</a>
 </main>
 @endsection
 

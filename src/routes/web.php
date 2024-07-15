@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CreateStoreRepresentativeController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\NoticeEmailController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ReservationController;
@@ -67,7 +68,12 @@ Route::controller(ReviewController::class)->group(function(){
 });
 
 Route::controller(QRCodeController::class)->middleware("auth")->group(function(){
-    Route::get("{reservation}/qrcode","makeQRCode")->name("qrcode");
+    Route::get("/{reservation}/qrcode","makeQRCode")->name("qrcode");
+});
+
+Route::controller(NoticeEmailController::class)->middleware(["auth"])->group(function(){
+    Route::get("/notice-email","noticeEmail")->name("email.write");
+    Route::post("/notice-email","sendNoticeEmail")->name("email.send");
 });
 
 require __DIR__.'/auth.php';
