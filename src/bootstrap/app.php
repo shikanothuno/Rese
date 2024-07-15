@@ -15,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
             "admin" => \App\Http\Middleware\AdminMiddleware::class,
             "store.representative" => \App\Http\Middleware\StoreRepresentativeMiddleware::class,
             "reservation.user" => \App\Http\Middleware\ReservationUserMiddleware::class,
+            "not.genaral.user" => \App\Http\Middleware\NotGeneralUser::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

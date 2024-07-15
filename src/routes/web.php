@@ -71,7 +71,7 @@ Route::controller(QRCodeController::class)->middleware("auth")->group(function()
     Route::get("/{reservation}/qrcode","makeQRCode")->name("qrcode");
 });
 
-Route::controller(NoticeEmailController::class)->middleware(["auth"])->group(function(){
+Route::controller(NoticeEmailController::class)->middleware(["auth","not.genaral.user"])->group(function(){
     Route::get("/notice-email","noticeEmail")->name("email.write");
     Route::post("/notice-email","sendNoticeEmail")->name("email.send");
 });
