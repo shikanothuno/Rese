@@ -31,58 +31,9 @@
                 @endfor
             </select>
         </form>
-        <br>
-        <div class="reservation-detail">
-            <table class="reservation-detail__table">
-                <tr>
-                    <td>Shop</td>
-                    <td>{{ $reservation->shop->name }}</td>
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td><span id="date-preview"></span></td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td><span id="time-preview"></span></td>
-                </tr>
-                <tr>
-                    <td>Number</td>
-                    <td><span id="people-preview"></span>人</td>
-                </tr>
-            </table>
-        </div>
 
         <button class="submit-button" onclick="document.getElementById('reservation-form').submit()">予約更新</button>
     </div>
 </main>
-<script>
-    document.getElementById("date").addEventListener("input",function(){
-    document.getElementById("date-preview").textContent = this.value;
-});
 
-document.getElementById("time").addEventListener("input",function(){
-    document.getElementById("time-preview").textContent = this.value;
-});
-
-document.getElementById("people").addEventListener("input",function(){
-    document.getElementById("people-preview").textContent = this.value;
-});
-
-document.getElementById("date").addEventListener("DOMContentLoaded",function(){
-    document.getElementById("date-preview").textContent = this.value;
-});
-
-document.getElementById("time").addEventListener("DOMContentLoaded",function(){
-    document.getElementById("time-preview").textContent = this.value;
-});
-
-document.getElementById("people").addEventListener("DOMContentLoaded",function(){
-    document.getElementById("people-preview").textContent = this.value;
-});
-
-function submitForm(){
-    document.getElementById('reservation-form').submit();
-};
-</script>
 @endsection
