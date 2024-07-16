@@ -27,6 +27,8 @@
                             <div class="reservation-index">予約{{ $loop->iteration }}</div>
                         </div>
                         <div class="info-header-right">
+                            <a href="{{ route("qrcode",$reservation->id) }}"><img class="qrcode-button"
+                                src="{{ asset("images/qrcode_button.png") }}" alt=""></a>
                             <a href="{{ route("reservation.edit",$reservation->id) }}"><img class="update-button"
                                  src="{{ asset("images/update_button.png") }}" alt=""></a>
 

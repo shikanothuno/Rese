@@ -51,6 +51,10 @@
     padding-left: 50px;
 }
 
+.qrcode-button {
+    width: 40px;
+}
+
 .delete-button {
     margin-right: 40px;
     width: 40px;
