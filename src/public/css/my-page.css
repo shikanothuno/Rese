@@ -135,6 +135,10 @@
     text-decoration: none;
 }
 
+.review {
+    margin-top: 30px;
+}
+
 .favorite-button {
     height: 40px;
     margin-top: 20px;

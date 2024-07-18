@@ -52,6 +52,10 @@ main {
     margin-left: 15px;
 }
 
+.review {
+    margin-top: 20px;
+}
+
 .favorite {
     height: 35px;
     margin-top: 10px;
