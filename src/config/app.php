@@ -123,4 +123,14 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'providers' => [
+        // ...
+        App\Providers\StripeServiceProvider::class,
+    ],
+
+    'aliases' => [
+        // ...
+        'Stripe' => App\Facades\Stripe::class,
+    ],
+
 ];
