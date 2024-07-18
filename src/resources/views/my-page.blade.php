@@ -67,8 +67,8 @@
                     <div class="shop-name">{{ $shop->name }}</div>
                     <div class="shop-region-and-genre">{{ "#" . $shop->region->name . " " . "#" . $shop->genre->name }}</div>
                     <div class="shop-footor">
-                        <a class="review" href="{{ route("reviews.show",$shop->id) }}">口コミ</a>
                         <a class="shop-detail-button" href="{{ route("shop-detail",$shop->id) }}">詳しくみる</a>
+                        <a class="review" href="{{ route("reviews.show",$shop->id) }}">口コミ</a>
                         <img class="favorite-button" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_on.png") }}" alt="">
                     </div>
                 </div>
