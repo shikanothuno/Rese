@@ -20,6 +20,7 @@
                         <button class="logout-button">Logout</button>
                     </form></li>
                     <li class="nav-item"><a href="{{ route("mypage") }}">Mypage</a></li>
+                    <li class="nav-item"><a href="{{ route("reviews.create") }}">Review</a></li>
                     @if (Auth::user()->is_admin)
                         <li class="nav-item"><a href="{{ route("admin.admin") }}">Admin</a></li>
                     @endif
