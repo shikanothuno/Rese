@@ -1,11 +1,11 @@
 @extends('layouts/layout-base')
 
 @section('title')
-    ご予約ありがとうございます
+    お支払い
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset("css/done.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/payment.css") }}">
 @endsection
 
 @section('content')

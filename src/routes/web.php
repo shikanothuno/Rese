@@ -9,6 +9,7 @@ use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopImageController;
 use App\Http\Controllers\StoreRepresentativeController;
 use App\Http\Controllers\UpdateShopInfoController;
 use Illuminate\Support\Facades\Route;
@@ -69,6 +70,12 @@ Route::controller(QRCodeController::class)->middleware("auth")->group(function()
 Route::controller(NoticeEmailController::class)->middleware(["auth","not.genaral.user"])->group(function(){
     Route::get("/notice-email","noticeEmail")->name("email.write");
     Route::post("/notice-email","sendNoticeEmail")->name("email.send");
+});
+
+Route::controller(ShopImageController::class)->group(function(){
+    Route::get("/{shop_id}/shop-image-show","showShopImages")->name("shop-images.show");
+    Route::get("/shop-image-upload","uploadShopImageView")->name("shop-images.upload");
+    Route::post("/shop-image-upload","uploadShopImage")->name("shop-images.store");
 });
 
 require __DIR__.'/auth.php';
