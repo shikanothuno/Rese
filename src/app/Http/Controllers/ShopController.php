@@ -59,14 +59,13 @@ class ShopController extends Controller
     public function myPage()
     {
         $user = Auth::user();
-        $user_id = Auth::user()->id;
+        $user_id = Auth::id();
         $reservations = Reservation::where("user_id","=",$user_id)->get()->all();
         $favorites = Favorite::where("user_id","=",$user_id)->get();
         $shops = array();
         for ($i = 0;$i < count($favorites);$i++){
             $shops[] = $favorites[$i]->shop;
         }
-
 
         return view("my-page",compact("reservations","shops","user"));
 

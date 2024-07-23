@@ -11,6 +11,8 @@ class CreateStoreRepresentativeController extends Controller
 {
     public function store(CreateStoreRepresentativeRequest $request)
     {
+        $request->session()->regenerateToken();
+
         $user = Auth::user();
         $name = $request->input("name");
         $email = $request->input("email");

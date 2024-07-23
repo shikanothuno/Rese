@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
-    public function store(ReservationRequest $request,$shop_id)
+    public function store(ReservationRequest $request, $shop_id)
     {
         $request->session()->regenerateToken();
 
         $reservation_date_and_time = new DateTime($request->input("date") . " " .
         $request->input("time"));
-        $user_id = Auth::user()->id;
+        $user_id = Auth::id();
         $number_of_people_booked = $request->input("number_of_people_booked");
         Reservation::createReservation($user_id, $shop_id, $number_of_people_booked, $reservation_date_and_time);
 
@@ -24,7 +24,7 @@ class ReservationController extends Controller
         return redirect(route("done"));
     }
 
-    public function delete(Request $request,$reservation_id)
+    public function delete(Request $request, $reservation_id)
     {
         $request->session()->regenerateToken();
 

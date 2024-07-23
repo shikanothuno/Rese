@@ -12,7 +12,7 @@
 <main>
     <div class="container">
         @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
+            <li class="error-message">{{ $error }}</li>
         @endforeach
         <form class="review-form" method="POST" action="{{ route("reviews.store") }}">
             @csrf

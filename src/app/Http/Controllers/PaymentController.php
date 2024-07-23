@@ -13,6 +13,8 @@ class PaymentController extends Controller
 
     public function store(Request $request)
     {
+        $request->session()->regenerateToken();
+
         \Stripe\Stripe::setApiKey(config("stripe.stripe_secret_key"));
 
         return redirect(route("payment.store"));

@@ -11,6 +11,9 @@
 @section('content')
 <main>
     <div class="container">
+        @foreach ($errors->all() as $error)
+            <li class="error-message">{{ $error }}</li>
+        @endforeach
         <form action="{{ route("email.send") }}" method="POST">
             @csrf
             <table>

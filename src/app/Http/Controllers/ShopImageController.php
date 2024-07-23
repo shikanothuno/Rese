@@ -25,12 +25,11 @@ class ShopImageController extends Controller
 
     public function uploadShopImage(UploadImageRequest $request)
     {
-        $image_name = $request->input("image-name");
+        $request->session()->regenerateToken();
 
+        $image_name = $request->input("image_name");
         $shop_id = $request->input("shop_id");
-
         $path = $request->file("image")->storeAs("images",$image_name,"public");
-
         $url = Storage::url($path);
 
         Image::storeImageInfo($shop_id, $image_name, $url);

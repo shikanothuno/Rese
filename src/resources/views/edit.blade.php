@@ -10,11 +10,10 @@
 
 @section('content')
 <main>
-
     <div class="container">
         <h2 class="title">予約変更</h2>
         @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
+            <li class="error-message">{{ $error }}</li>
         @endforeach
         <form class="reservation-form" method="POST" action="{{ route("reservation.update", $reservation->id) }}">
             @method("PUT")

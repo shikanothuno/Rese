@@ -18,8 +18,9 @@ class NoticeEmailController extends Controller
 
     public function sendNoticeEmail(SendNoticeEmailRequest $request)
     {
+        $request->session()->regenerateToken();
+
         $text_body = $request->input("text-body");
-        $user = Auth::user();
         $email = $request->input("email");
         $subject = $request->input("subject");
 

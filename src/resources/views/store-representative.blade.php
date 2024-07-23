@@ -15,7 +15,7 @@
             @csrf
             @method("PUT")
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li class="error-message">{{ $error }}</li>
             @endforeach
             <table>
                 <tr>
@@ -56,9 +56,12 @@
         </form>
 
     </div>
-    <a href="{{ route("email.write") }}">お知らせメール作成</a>
-    <a href="{{ route("shop-images.show",$shop->id) }}">お店の画像を表示</a>
-    <a href="{{ route("shop-images.upload") }}">お店の画像を登録</a>
+    <div class="menu">
+        <a href="{{ route("email.write") }}">お知らせメール作成</a>
+        <a href="{{ route("shop-images.show",$shop->id) }}">お店の画像を表示</a>
+        <a href="{{ route("shop-images.upload") }}">お店の画像を登録</a>
+    </div>
+
 </main>
 @endsection
 

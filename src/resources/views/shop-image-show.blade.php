@@ -14,7 +14,7 @@
         @foreach ($images as $image)
             <div class="images-card">
                 <img src="{{ asset($image->url) }}" alt="">
-                <div class="image-name">{{ $image->file_name }}</div>
+                <div class="image-name">{{ $image->image_name }}</div>
             </div>
         @endforeach
 

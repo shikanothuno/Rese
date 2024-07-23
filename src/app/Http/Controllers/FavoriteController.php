@@ -11,7 +11,7 @@ class FavoriteController extends Controller
     public function store(Request $request, $shop_id)
     {
         $request->session()->regenerateToken();
-        $user_id = Auth::user()->id;
+        $user_id = Auth::id();
 
         Favorite::create([
             "user_id" => $user_id,
@@ -23,7 +23,7 @@ class FavoriteController extends Controller
     public function delete(Request $request, $shop_id)
     {
         $request->session()->regenerateToken();
-        $user_id = Auth::user()->id;
+        $user_id = Auth::id();
         Favorite::where("user_id","=",$user_id)->where("shop_id","=",$shop_id)->get()->first()->delete();
     }
 }

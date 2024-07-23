@@ -14,6 +14,7 @@ class StoreRepresentativeController extends Controller
         $shop = Shop::find($shop_id);
         $genres = Genre::all();
         $regions = Region::all();
+
         return view("store-representative",compact("shop","genres","regions"));
     }
 }

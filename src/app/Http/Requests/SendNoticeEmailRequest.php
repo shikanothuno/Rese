@@ -27,4 +27,13 @@ class SendNoticeEmailRequest extends FormRequest
             "text-body" => ["required","string"],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            "email.required" => "送り先は必ず指定してください。",
+            "subject.required" => "件名は必ず指定してください。",
+            "text-body.required" => "メール本文は必ず指定してください。",
+        ];
+    }
 }

@@ -29,7 +29,9 @@ class ReviewController extends Controller
 
     public function store(ReviewCreateRequest $request)
     {
-        $user_id = Auth::user()->id;
+        $request->session()->regenerateToken();
+
+        $user_id = Auth::id();
         $shop_id = $request->input("shop_id");
         $comment = $request->input("comment");
         $rating = $request->input("rating");

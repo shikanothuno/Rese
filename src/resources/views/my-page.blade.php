@@ -10,8 +10,6 @@
 
 @section('content')
 <main>
-    <div id="reservation-number" data-number="{{ count($reservations) }}"></div>
-    <div id="favorite-number" data-number="{{ count($shops) }}"></div>
     <div class="mypage-header">
         <div class="user-name">{{ $user->name }}さん</div>
     </div>
@@ -31,7 +29,6 @@
                                 src="{{ asset("images/qrcode_button.png") }}" alt=""></a>
                             <a href="{{ route("reservation.edit",$reservation->id) }}"><img class="update-button"
                                  src="{{ asset("images/update_button.png") }}" alt=""></a>
-
                             <img class="delete-button" data-id="{{ $reservation->id }}" src="{{ asset("images/close_button.png") }}" alt="">
                         </div>
                     </div>

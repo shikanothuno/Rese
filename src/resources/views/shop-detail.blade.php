@@ -65,22 +65,7 @@
         <button class="submit-button" onclick="document.getElementById('reservation-form').submit()">予約する</button>
     </div>
 </main>
-<script>
-    document.getElementById("date").addEventListener("input",function(){
-        document.getElementById("date-preview").textContent = this.value;
-    });
-
-    document.getElementById("time").addEventListener("input",function(){
-        document.getElementById("time-preview").textContent = this.value;
-    });
-
-    document.getElementById("people").addEventListener("input",function(){
-        document.getElementById("people-preview").textContent = this.value;
-    });
-
-    function submitForm(){
-        document.getElementById('reservation-form').submit();
-    };
-</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{ asset("js/shop-detail.js") }}"></script>
 @endsection
 

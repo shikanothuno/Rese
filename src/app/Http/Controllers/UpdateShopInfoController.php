@@ -10,8 +10,10 @@ class UpdateShopInfoController extends Controller
 {
     public function update(UpdateShopInfoRequest $request, $shop_id)
     {
-        $shop = Shop::find($shop_id);
         $request->session()->regenerateToken();
+
+        $shop = Shop::find($shop_id);
+
         $name = $request->input("name");
         $region_id = $request->input("region_id");
         $genre_id = $request->input("genre_id");

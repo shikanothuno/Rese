@@ -11,6 +11,9 @@
 @section('content')
 <main>
     <div class="container">
+        @foreach ($errors->all() as $error)
+            <li class="error-message">{{ $error }}</li>
+        @endforeach
         <form action="{{ route("shop-images.store") }}" method="POST" enctype="multipart/form-data">
             @csrf
             <table>
@@ -31,7 +34,7 @@
                 </tr>
                 <tr>
                     <td>ファイル名</td>
-                    <td><input type="text" name="image-name"></td>
+                    <td><input type="text" name="image_name"></td>
                 </tr>
             </table>
             <button type="submit">アップロード</button>
