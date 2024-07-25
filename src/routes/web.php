@@ -73,7 +73,7 @@ Route::controller(NoticeEmailController::class)->middleware(["auth","not.genaral
     Route::post("/notice-email","sendNoticeEmail")->name("email.send");
 });
 
-Route::controller(ShopImageController::class)->middleware(["auth","store.representative"])->group(function(){
+Route::controller(ShopImageController::class)->middleware(["auth"])->group(function(){
     Route::get("/{shop_id}/shop-image-show","showShopImages")->name("shop-images.show");
     Route::get("/shop-image-upload","uploadShopImageView")->name("shop-images.upload");
     Route::post("/shop-image-upload","uploadShopImage")->name("shop-images.store");

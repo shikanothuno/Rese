@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset("css/done.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/shop-image-upload.css") }}">
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@
         @endforeach
         <form action="{{ route("shop-images.store") }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <table>
+            <table class="table">
                 <tr>
                     <td>店舗</td>
                     <td>

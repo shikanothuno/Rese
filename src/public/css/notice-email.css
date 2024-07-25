@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.table {
+    text-align: left;
+}
+

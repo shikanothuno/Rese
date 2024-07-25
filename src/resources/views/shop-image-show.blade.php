@@ -13,7 +13,7 @@
     <div class="container">
         @foreach ($images as $image)
             <div class="images-card">
-                <img src="{{ asset($image->url) }}" alt="">
+                <img class="img" src="{{ asset($image->url) }}" alt="">
                 <div class="image-name">{{ $image->image_name }}</div>
             </div>
         @endforeach

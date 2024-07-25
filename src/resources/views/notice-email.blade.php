@@ -16,7 +16,7 @@
         @endforeach
         <form action="{{ route("email.send") }}" method="POST">
             @csrf
-            <table>
+            <table class="table">
                 <tr>
                     <td>送り先</td>
                     <td>
