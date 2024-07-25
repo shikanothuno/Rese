@@ -3,20 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Stripe\Charge;
+use Stripe\PaymentIntent;
+use Stripe\PaymentMethod;
 
 class PaymentController extends Controller
 {
-    public function create()
+    public function payment()
     {
         return view("payment");
     }
 
-    public function store(Request $request)
+    public function paymentStore(Request $request)
     {
         $request->session()->regenerateToken();
 
-        \Stripe\Stripe::setApiKey(config("stripe.stripe_secret_key"));
+        \Stripe\Stripe::setApiKey(config("services.stripe.secret"));
 
-        return redirect(route("payment.store"));
+        $charge = Charge::create([
+            "amount" => 1000,
+            "currency" => "jpy",
+            "source" => $request->stripeToken,
+        ]);
+
+        return view("payment");
     }
 }

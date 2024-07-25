@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CreateStoreRepresentativeController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\NoticeEmailController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ReservationController;
@@ -76,6 +77,11 @@ Route::controller(ShopImageController::class)->middleware(["auth","store.represe
     Route::get("/{shop_id}/shop-image-show","showShopImages")->name("shop-images.show");
     Route::get("/shop-image-upload","uploadShopImageView")->name("shop-images.upload");
     Route::post("/shop-image-upload","uploadShopImage")->name("shop-images.store");
+});
+
+Route::controller(PaymentController::class)->middleware("auth")->group(function(){
+    Route::get("/payment","payment")->name("payment");
+    Route::post("/payment","paymentStore")->name("payment.store");
 });
 
 require __DIR__.'/auth.php';
