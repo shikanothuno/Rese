@@ -13,14 +13,16 @@ class Image extends Model
         "shop_id",
         "image_name",
         "url",
+        "is_s3",
     ];
 
-    public static function storeImageInfo($shop_id, $image_name, $url)
+    public static function storeImageInfo($shop_id, $image_name, $url, $is_s3)
     {
         Image::create([
             "shop_id" => $shop_id,
             "image_name" => $image_name,
-            "url" => $url
+            "url" => $url,
+            "is_s3" => $is_s3,
         ]);
     }
 }

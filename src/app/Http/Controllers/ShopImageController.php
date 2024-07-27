@@ -6,8 +6,9 @@ use App\Http\Requests\UploadImageRequest;
 use App\Models\Image;
 use App\Models\Shop;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+
+
 
 class ShopImageController extends Controller
 {
@@ -27,12 +28,19 @@ class ShopImageController extends Controller
     {
         $request->session()->regenerateToken();
 
+        $is_s3 = $request->input("is_s3");
         $image_name = $request->input("image_name");
         $shop_id = $request->input("shop_id");
-        $path = $request->file("image")->storeAs("images",$image_name,"public");
-        $url = Storage::url($path);
 
-        Image::storeImageInfo($shop_id, $image_name, $url);
+        if($is_s3){
+            $path = Storage::disk("s3")->putFileAs("images",$request->file("image"),$image_name);
+            $url = Storage::disk("s3")->url($path);
+        }else{
+            $path = $request->file("image")->storeAs("images",$image_name,"public");
+            $url = Storage::url($path);
+        }
+
+        Image::storeImageInfo($shop_id, $image_name, $url, $is_s3);
 
         return redirect(route("shop-images.upload"));
     }

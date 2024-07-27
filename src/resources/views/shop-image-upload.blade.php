@@ -36,6 +36,10 @@
                     <td>ファイル名</td>
                     <td><input type="text" name="image_name"></td>
                 </tr>
+                <tr>
+                    <td>S3に保存する</td>
+                    <td><input type="checkbox" name="is_s3" id="is_s3"></td>
+                </tr>
             </table>
             <button type="submit">アップロード</button>
         </form>
