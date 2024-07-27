@@ -28,7 +28,12 @@ class ShopImageController extends Controller
     {
         $request->session()->regenerateToken();
 
-        $is_s3 = $request->input("is_s3");
+        if($request->input("is_s3") === "on"){
+            $is_s3 = true;
+        }else{
+            $is_s3 = false;
+        }
+
         $image_name = $request->input("image_name");
         $shop_id = $request->input("shop_id");
 
