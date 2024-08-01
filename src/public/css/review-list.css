@@ -36,9 +36,8 @@ table td {
     vertical-align: top;
 }
 
-@media (max-width: 768px){
+@media (max-width: 930px){
     .shop-name {
-        padding-left: 50px;
         width: 150px;
     }
 
