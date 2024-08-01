@@ -10,13 +10,12 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 1920px;
 }
 
 .resevation-info {
-    margin-left: 150px;
-    margin-right: 150px;
-    width: 600px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 30vw;
 }
 
 .reservation-infos {
@@ -25,7 +24,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
-    width: 600px;
+    width: 30vw;
 }
 
 .info-header {
@@ -77,8 +76,8 @@
 }
 
 .favorite-shops {
-    padding-right: 150px;
-    width: 720px;
+    padding-right: 10%;
+    width: 30vw;
 }
 
 .title {
@@ -102,7 +101,7 @@
     border-top-right-radius: 10px;
     height: 150px;
     object-fit: cover;
-    width: 300px;
+    width: 15vw;
 }
 
 .shop-name {
@@ -146,12 +145,40 @@
     width: 40px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1612px){
+
+    .resevation-info {
+        width: 40vw;
+    }
+
+    .reservation-infos {
+        width: 40vw;
+    }
+
+    .shop-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+    }
+
+    .favorite-shops {
+        width: 40vw;
+    }
+
+    .shop-image {
+        object-fit: cover;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 924px){
 
     .container {
         display: flex;
         flex-wrap: wrap;
-        width: 768px;
+        width: 50vw;
     }
 
     .user-name {
@@ -161,13 +188,11 @@
     }
 
     .resevation-info {
-        margin-left: 50px;
-        margin-right: 50px;
-        width: 400px;
+        width: 50vw;
     }
 
     .reservation-infos {
-        width: 400px;
+        width: 50vw;
     }
 
     .info-header {
@@ -191,7 +216,7 @@
     .favorite-shops {
         padding-right: 0px;
         margin-left: 50px;
-        width: 768px;
+        width: 50vw;
     }
 
     .info {
@@ -208,6 +233,29 @@
     .shop-list {
         display: flex;
         flex-direction: column;
-        width: 300px;
+        width: 50vw;
+    }
+}
+
+@media (max-width: 924px){
+
+    .container {
+        width: 80vw;
+    }
+
+    .resevation-info {
+        width: 60vw;
+    }
+
+    .reservation-infos {
+        width: 60vw;
+    }
+
+    .favorite-shops {
+        width: 60vw;
+    }
+
+    .shop-list {
+        width: 60vw;
     }
 }

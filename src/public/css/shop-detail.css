@@ -1,12 +1,12 @@
 main {
     display: flex;
     justify-content: space-between;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .shop-detail {
-    width: 610px;
+    width: 30vw;
 }
 
 .shop-detail-header {
@@ -38,7 +38,7 @@ main {
 }
 
 .shop-img__div img {
-    width: 610px;
+    width: 30vw;
 }
 
 .shop-region-and-genre {
@@ -57,7 +57,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 0;
-    width: 610px;
+    width: 40vw;
 }
 
 .title {
@@ -82,7 +82,7 @@ main {
     border-radius: 5px;
     height: 30px;
     margin-bottom: 20px;
-    width: 200px;
+    width: 10vw;
 }
 
 .time {
@@ -90,7 +90,7 @@ main {
     border-radius: 5px;
     height: 30px;
     margin-bottom: 20px;
-    width: 500px;
+    width: 30vw;
 }
 
 .people {
@@ -98,7 +98,7 @@ main {
     border-radius: 5px;
     height: 30px;
     margin-bottom: 20px;
-    width: 500px;
+    width: 30vw;
 }
 
 .reservation-detail {
@@ -139,6 +139,31 @@ main {
         justify-content: flex-start;
         margin-left: 50px;
     }
+
+    .shop-detail {
+        width: 80vw;
+    }
+
+    .shop-img__div img {
+        width: 80vw;
+    }
+
+    .reservation {
+        width: 80vw;
+    }
+
+    .date {
+        width: 30vw;
+    }
+
+    .time {
+        width: 60vw;
+    }
+
+    .people {
+        width: 60vw;
+    }
+
 }
 
 
