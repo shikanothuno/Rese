@@ -4,7 +4,8 @@ const favorite_on_buttons = document.querySelectorAll("#favorite-on");
 favorite_on_buttons.forEach(button => {
     button.addEventListener("click",function(){
         const shop_id = button.dataset.id;
-        axios.delete("/" + shop_id + "/favorite-delete",{},{
+        fetch("/" + shop_id + "/favorite-delete",{
+            method:"DELETE",
             headers:{
                 "X-CSRF-TOKEN":csrfToken
             }
@@ -20,7 +21,8 @@ const favorite_off_buttons = document.querySelectorAll("#favorite-off");
 favorite_off_buttons.forEach(button => {
     button.addEventListener("click",function(){
         const shop_id = button.dataset.id;
-        axios.post("/" + shop_id + "/favorite-store",{},{
+        fetch("/" + shop_id + "/favorite-store",{
+            method:"POST",
             headers:{
                 "X-CSRF-TOKEN":csrfToken
             }

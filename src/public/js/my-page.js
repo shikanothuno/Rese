@@ -4,7 +4,8 @@ const reservations = document.querySelectorAll(".delete-button");
 reservations.forEach(reservation => {
     reservation.addEventListener("click",function(){
         const reservation_id = reservation.dataset.id;
-        axios.delete("/" + reservation_id + "/delete",{},{
+        fetch("/" + reservation_id + "/delete",{
+            method:"DELETE",
             headers:{
                 "X-CSRF-TOKEN":csrfToken
             }
@@ -19,7 +20,8 @@ const favorites = document.querySelectorAll(".favorite-button");
 favorites.forEach(favorite => {
     favorite.addEventListener("click",function(){
         const shop_id =favorite.dataset.id;
-        axios.delete("/"+ shop_id + "/favorite-delete",{},{
+        fetch("/"+ shop_id + "/favorite-delete",{
+            method:"DELETE",
             headers:{
                 "X-CSRF-TOKEN":csrfToken
             }
