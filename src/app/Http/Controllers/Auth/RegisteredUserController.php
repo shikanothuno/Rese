@@ -40,6 +40,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('shop-list', absolute: false));
+        return redirect(route('verification.notice', absolute: false));
     }
 }
