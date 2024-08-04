@@ -22,9 +22,20 @@
                      class="detail-button">詳しくみる</a>
                 <a class="review" href="{{ route("reviews.show",$shop->id) }}">口コミ</a>
                 @if ($favorites && $favorites->contains('shop_id', $shop->id))
-                    <img class="favorite" id="favorite-on" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_on.png") }}" alt="">
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('{{ 'delete-form' . $shop->id }}').submit();">
+                        <img class="favorite" id="favorite-on" src="{{ asset("images/favorite_on.png") }}" alt="">
+                    </a>
+                    <form id={{ 'delete-form' . $shop->id }} action="{{ route("favorite.delete",$shop->id) }}" method="POST" style="diplay: none;">
+                        @csrf
+                        @method("DELETE")
+                    </form>
                 @else
-                    <img class="favorite" id="favorite-off" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_off.png") }}" alt="">
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('{{ 'store-form' . $shop->id }}').submit();">
+                        <img class="favorite" id="favorite-off" src="{{ asset("images/favorite_off.png") }}" alt="">
+                    </a>
+                    <form id={{ 'store-form' . $shop->id }} action="{{ route("favorite.store",$shop->id) }}" method="POST" style="diplay: none;">
+                        @csrf
+                    </form>
                 @endif
             </div>
 
@@ -33,8 +44,7 @@
 
     </div>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="{{ asset("js/shop-list.js") }}"></script>
+
 @endsection
 
 

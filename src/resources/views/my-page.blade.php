@@ -28,8 +28,13 @@
                             <a href="{{ route("qrcode",$reservation->id) }}"><img class="qrcode-button"
                                 src="{{ asset("images/qrcode_button.png") }}" alt=""></a>
                             <a href="{{ route("reservation.edit",$reservation->id) }}"><img class="update-button"
-                                 src="{{ asset("images/update_button.png") }}" alt=""></a>
-                            <img class="delete-button" data-id="{{ $reservation->id }}" src="{{ asset("images/close_button.png") }}" alt="">
+                                src="{{ asset("images/update_button.png") }}" alt=""></a>
+                            <a href="#" onclick="event.preventDefault();document.getElementById('{{ 'reservation-delete-form' . $reservation->id }}').submit();"><img class="delete-button"
+                                src="{{ asset("images/close_button.png") }}" alt=""></a>
+                            <form id={{ 'reservation-delete-form' . $reservation->id }} action="{{ route("reservation.delete",$reservation->id) }}" method="POST" style="display: none;">
+                                @csrf
+                                @method("DELETE")
+                            </form>
                         </div>
                     </div>
                     <div class="info">
@@ -66,7 +71,13 @@
                     <div class="shop-footor">
                         <a class="shop-detail-button" href="{{ route("shop-detail",$shop->id) }}">詳しくみる</a>
                         <a class="review" href="{{ route("reviews.show",$shop->id) }}">口コミ</a>
-                        <img class="favorite-button" data-id="{{ $shop->id }}" src="{{ asset("images/favorite_on.png") }}" alt="">
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('{{ 'favorite-delete-form' . $shop->id }}').submit();">
+                            <img class="favorite-button" src="{{ asset("images/favorite_on.png") }}" alt="">
+                        </a>
+                        <form id="{{ 'favorite-delete-form' . $shop->id }}" action="{{ route("favorite.delete",$shop->id) }}" method="POST" style="display: none;">
+                            @csrf
+                            @method("DELETE")
+                        </form>
                     </div>
                 </div>
             @endforeach
@@ -76,6 +87,4 @@
     </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="{{ asset("js/my-page.js") }}"></script>
 @endsection
