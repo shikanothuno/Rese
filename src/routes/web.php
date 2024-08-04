@@ -38,8 +38,8 @@ Route::controller(ReservationController::class)->group(function(){
 });
 
 Route::controller(FavoriteController::class)->group(function(){
-    Route::post("/{shop}/favorite-store","store")->name("favorite.store");
-    Route::delete("/{shop}/favorite-delete","delete")->name("favorite.delete");
+    Route::post("/{shop}/favorite-store","store")->middleware("auth")->name("favorite.store");
+    Route::delete("/{shop}/favorite-delete","delete")->middleware("auth")->name("favorite.delete");
 });
 
 Route::controller(AdminController::class)->middleware(["auth","admin"])->group(function(){
