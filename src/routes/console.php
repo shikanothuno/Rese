@@ -19,4 +19,4 @@ Schedule::call(function(){
             $message->to($reservation->user->email)->subject("ご予約のお知らせ");
         });
     }
-});
+})->daily();
