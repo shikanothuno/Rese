@@ -15,7 +15,7 @@
         @foreach ($errors->all() as $error)
             <li class="error-message">{{ $error }}</li>
         @endforeach
-        <form class="reservation-form" method="POST" action="{{ route("reservation.update", $reservation->id) }}">
+        <form id="reservation-form" class="reservation-form" method="POST" action="{{ route("reservation.update", $reservation->id) }}">
             @method("PUT")
             @csrf
             <input type="text" name="shop_id" value="{{ $reservation->shop_id }}" style="display: none">
