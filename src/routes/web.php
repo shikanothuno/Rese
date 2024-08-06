@@ -44,15 +44,15 @@ Route::controller(CreateStoreRepresentativeController::class)->middleware(["auth
 });
 
 Route::controller(StoreRepresentativeController::class)->middleware(["auth","store.representative"])->group(function(){
-    Route::get("/shop/{shop_id}/store-representative","storeRepresentative")->name("store-representative");
+    Route::get("/shop/{shop}/store-representative","storeRepresentative")->name("store-representative");
 });
 
 Route::controller(UpdateShopInfoController::class)->middleware(["auth","store.representative"])->group(function(){
-    Route::put("/shop/{shop_id}","update")->name("store-representative.update");
+    Route::put("/shop/{shop}","update")->name("store-representative.update");
 });
 
 Route::controller(ReviewController::class)->group(function(){
-    Route::get("/reviews/{shop_id}/show","show")->name("reviews.show");
+    Route::get("/reviews/{shop}/show","show")->name("reviews.show");
     Route::get("/reviews/create","create")->middleware("auth")->name("reviews.create");
     Route::post("/reviews/create","store")->middleware("auth")->name("reviews.store");
 });
@@ -67,7 +67,7 @@ Route::controller(NoticeEmailController::class)->middleware(["auth","not.genaral
 });
 
 Route::controller(ShopImageController::class)->middleware(["auth"])->group(function(){
-    Route::get("/{shop_id}/shop-image-show","showShopImages")->name("shop-images.show");
+    Route::get("/{shop}/shop-image-show","showShopImages")->name("shop-images.show");
     Route::get("/shop-image-upload","uploadShopImageView")->name("shop-images.upload");
     Route::post("/shop-image-upload","uploadShopImage")->name("shop-images.store");
 });
