@@ -21,7 +21,7 @@ WORKDIR /var/www
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # 起動スクリプトをコピー
-COPY start.sh /start.sh
+COPY /start.sh /start.sh
 RUN chmod +x /start.sh
 
 # エントリーポイントを設定
