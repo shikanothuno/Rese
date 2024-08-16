@@ -220,7 +220,7 @@ php artisan storage:link
 ```
 
 
-12. 以下のユーザメールとパスワードを使ってログインする
+12. 以下のユーザメールとパスワードを使ってログインする  
 管理者
 ```
 email:admin@example.com
