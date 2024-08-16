@@ -14,3 +14,23 @@
 2024-08-16 04:50:13,162 INFO spawned: 'php-fpm' with pid 8
 2024-08-16 04:50:14,183 INFO success: laravel-scheduler entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2024-08-16 04:50:14,183 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-16 04:54:04,131 WARN received SIGQUIT indicating exit request
+2024-08-16 04:54:04,131 INFO waiting for laravel-scheduler, php-fpm to die
+2024-08-16 04:54:04,133 INFO stopped: php-fpm (exit status 0)
+2024-08-16 04:54:04,135 WARN stopped: laravel-scheduler (terminated by SIGTERM)
+2024-08-16 05:00:15,738 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-16 05:00:15,745 INFO supervisord started with pid 1
+2024-08-16 05:00:16,750 INFO spawned: 'laravel-scheduler' with pid 7
+2024-08-16 05:00:16,751 INFO spawned: 'php-fpm' with pid 8
+2024-08-16 05:00:17,765 INFO success: laravel-scheduler entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-16 05:00:17,765 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-16 05:04:43,922 WARN received SIGQUIT indicating exit request
+2024-08-16 05:04:43,923 INFO waiting for laravel-scheduler, php-fpm to die
+2024-08-16 05:04:43,926 INFO stopped: php-fpm (exit status 0)
+2024-08-16 05:04:43,928 WARN stopped: laravel-scheduler (terminated by SIGTERM)
+2024-08-16 05:05:11,130 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-08-16 05:05:11,133 INFO supervisord started with pid 1
+2024-08-16 05:05:12,135 INFO spawned: 'laravel-scheduler' with pid 7
+2024-08-16 05:05:12,137 INFO spawned: 'php-fpm' with pid 8
+2024-08-16 05:05:13,151 INFO success: laravel-scheduler entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-08-16 05:05:13,152 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

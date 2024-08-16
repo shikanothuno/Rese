@@ -20,9 +20,4 @@ WORKDIR /var/www
 # Supervisordの設定をコピー
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# 起動スクリプトをコピー
-COPY /start.sh /start.sh
-RUN chmod +x /start.sh
-
-# エントリーポイントを設定
-ENTRYPOINT ["/start.sh"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
