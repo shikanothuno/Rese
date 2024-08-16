@@ -142,24 +142,24 @@ http://localhost/
 Dockerで環境構築を行っている  
 
 ## 環境構築手順  
-1.環境構築用のディレクトリを用意する  
-2.Gitをダウンロードする  
-3.以下のコマンドをコマンドプロンプトに入力する  
+1. 環境構築用のディレクトリを用意する  
+2. Gitをダウンロードする  
+3. 以下のコマンドをコマンドプロンプトに入力する  
 ```
 git clone https://github.com/shikanothuno/Rese.git
 ```
-4.Dockerをインストールし、起動する  
-5.Reseフォルダの中でコマンドプロンプトを開いて以下のコマンドを入力する  
+4. Dockerをインストールし、起動する  
+5. Reseフォルダの中でコマンドプロンプトを開いて以下のコマンドを入力する  
 ```
 docker compose build
 ```
-6.srcファイルの中の.env.exampleを.envファイルとしてコピーする  
+6. srcファイルの中の.env.exampleを.envファイルとしてコピーする  
 コピーには以下のコマンドを使用する  
 ```
 cd ./src
 cp .env.example .env
 ```
-7.コピーした.envファイルの内容を以下のように書き換える  
+7. コピーした.envファイルの内容を以下のように書き換える  
 
 before　　
 ```before
@@ -173,6 +173,12 @@ DB_CONNECTION=sqlite
 MAIL_MAILER=log
 MAIL_HOST=127.0.0.1
 MAIL_PORT=2525
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
 
 ```
 
@@ -189,35 +195,49 @@ DB_PASSWORD=laravel_pass
 MAIL_MAILER=smtp
 MAIL_HOST=mailhog
 MAIL_PORT=1025
+
 ```
 
-8.以下のコマンドでPHPサーバーに入る  
+8. 以下のコマンドでPHPサーバーに入る  
 ```
 cd ../
 docker compose up -d
 docker compose exec php bash
 ```
 
-9.以下のコマンドで必要なファイルをインストールする  
+9. 以下のコマンドで必要なファイルをインストールする  
 ```
 composer install
 ```
 
-10.以下のコマンドでAPI Keyを生成する
+10. 以下のコマンドでAPI Keyを生成する
 ```
 php artisan key:generate
 ```
+11. 以下のコマンドでシンボリックリンクを作成する
+```
+php artisan storage:link
+```
 
-11.localhostにアクセスすると以下のURLに遷移する
-http://localhost/login
 
-12.以下のユーザメールとパスワードを使ってログインする
+12. 以下のユーザメールとパスワードを使ってログインする
+管理者
+```
+email:admin@example.com
+password:password
+```
+店舗代表者
+```
+email:store@example.com
+password:password
+```
+一般利用者
 ```
 email:test0example.com
 password:password
 ```
 
-13.アプリの機能を確認する  
+13. アプリの機能を確認する  
 
 ## ユーザー登録手順
 1.新規登録画面からユーザー名、メールアドレス、パスワードを登録する  
