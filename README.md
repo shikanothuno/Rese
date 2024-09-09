@@ -49,7 +49,7 @@ http://localhost/
 
 ## 設計したテーブル  
 
-### Shopsテーブル
+### shopsテーブル
 | カラム名      | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |---------------|-----------|-------------|------------|----------|-------------|
 | id            | integer   | O           | O          | O        |             |
@@ -62,7 +62,7 @@ http://localhost/
 | update_at     | timestamp |             |            |          |             |
 
 
-### Reservationsテーブル
+### reservationsテーブル
 | カラム名                  | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |---------------------------|-----------|-------------|------------|----------|-------------|
 | id                        | integer   | O           | O          | O        |             |
@@ -73,7 +73,7 @@ http://localhost/
 | create_at                 | timestamp |             |            |          |             |
 | update_at                 | timestamp |             |            |          |             |
 
-### Favoritesテーブル
+### favoritesテーブル
 | カラム名  | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |-----------|-----------|-------------|------------|----------|-------------|
 | id        | integer   | O           | O          | O        |             |
@@ -82,7 +82,7 @@ http://localhost/
 | create_at | timestamp |             |            |          |             |
 | update_at | timestamp |             |            |          |             |
 
-### Usersテーブル
+### usersテーブル
 | カラム名                 | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |--------------------------|-----------|-------------|------------|----------|-------------|
 | id                       | integer   | O           | O          | O        |             |
@@ -96,7 +96,7 @@ http://localhost/
 | create_at                | timestamp |             |            |          |             |
 | update_at                | timestamp |             |            |          |             |
 
-### Regionsテーブル
+### regionsテーブル
 | カラム名   | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |------------|-----------|-------------|------------|----------|-------------|
 | id         | integer   | O           | O          | O        |             |
@@ -104,7 +104,7 @@ http://localhost/
 | create_at  | timestamp |             |            |          |             |
 | update_at  | timestamp |             |            |          |             |
 
-### Genresテーブル
+### genresテーブル
 | カラム名   | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |------------|-----------|-------------|------------|----------|-------------|
 | id         | integer   | O           | O          | O        |             |
@@ -112,7 +112,7 @@ http://localhost/
 | create_at  | timestamp |             |            |          |             |
 | update_at  | timestamp |             |            |          |             |
 
-### Reviewsテーブル
+### reviewsテーブル
 | カラム名  | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |-----------|-----------|-------------|------------|----------|-------------|
 | id        | integer   | O           | O          | O        |             |
@@ -123,7 +123,7 @@ http://localhost/
 | create_at | timestamp |             |            |          |             |
 | update_at | timestamp |             |            |          |             |
 
-### Imagesテーブル
+### imagesテーブル
 | カラム名   | 型        | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |------------|-----------|-------------|------------|----------|-------------|
 | id         | integer   | O           | O          | O        |             |
