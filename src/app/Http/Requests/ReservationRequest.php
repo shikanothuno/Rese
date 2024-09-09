@@ -22,9 +22,9 @@ class ReservationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "number_of_people_booked" => "required",
-            "date" => "required",
-            "time" => "required",
+            "number_of_people_booked" => ["required"],
+            "date" => ["required","after_or_equal:today"],
+            "time" => ["required"],
         ];
 
     }
@@ -32,7 +32,8 @@ class ReservationRequest extends FormRequest
     public function messages()
     {
         return[
-            "number_of_people_booked.required" => "人数は必ず指定してください。"
+            "number_of_people_booked.required" => "人数は必ず指定してください。",
+            "date.after_or_equal" => "日付には、今日以降の日付を指定してください。",
         ];
     }
 }
