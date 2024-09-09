@@ -14,12 +14,9 @@ main {
     text-align: center;
 }
 
-table td {
-    padding: 5px;
-}
-
 .label {
     color: white;
+    padding: 5px;
 }
 
 .submit-button {

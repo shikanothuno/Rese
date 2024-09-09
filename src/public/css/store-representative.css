@@ -14,14 +14,11 @@ main {
     text-align: center;
 }
 
-table td {
+.label {
+    color: white;
     text-align: left;
     padding: 5px;
     vertical-align: top;
-}
-
-.label {
-    color: white;
 }
 
 .submit-button {

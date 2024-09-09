@@ -16,7 +16,7 @@
 
     <div class="container">
         <div class="resevation-info">
-            <div class="title">予約状況</div>
+            <h2 class="title">予約状況</h2>
             @foreach ($reservations as $reservation)
                 <div class="reservation-infos" id="reservation-info-{{ $loop->index }}">
                     <div class="info-header">
@@ -61,7 +61,7 @@
             @endforeach
         </div>
         <div class="favorite-shops">
-            <div class="title">お気に入り店舗</div>
+            <h2 class="title">お気に入り店舗</h2>
             <div class="shop-list">
                 @foreach ($shops as $shop)
                 <div class="shop-card">
@@ -80,7 +80,7 @@
                         </form>
                     </div>
                 </div>
-            @endforeach
+                @endforeach
             </div>
 
         </div>

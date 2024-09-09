@@ -84,3 +84,9 @@
 2024-09-06 07:30:09,164 INFO waiting for laravel-scheduler, php-fpm to die
 2024-09-06 07:30:09,167 INFO stopped: php-fpm (exit status 0)
 2024-09-06 07:30:09,169 WARN stopped: laravel-scheduler (terminated by SIGTERM)
+2024-09-09 04:24:40,474 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2024-09-09 04:24:40,478 INFO supervisord started with pid 1
+2024-09-09 04:24:41,480 INFO spawned: 'laravel-scheduler' with pid 7
+2024-09-09 04:24:41,481 INFO spawned: 'php-fpm' with pid 8
+2024-09-09 04:24:42,498 INFO success: laravel-scheduler entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-09-09 04:24:42,498 INFO success: php-fpm entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

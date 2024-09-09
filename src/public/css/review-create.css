@@ -18,13 +18,10 @@ main {
     padding-top: 15px;
 }
 
-table td {
-    text-align: left;
-    padding: 5px;
-}
-
 .label {
     color: white;
+    text-align: left;
+    padding: 5px;
 }
 
 .submit-button {
