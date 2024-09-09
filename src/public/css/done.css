@@ -5,10 +5,10 @@ main {
 
 .container {
     align-items: center;
-    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    width: 80vw;
 }
 
 .message-box {
@@ -17,7 +17,8 @@ main {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 600px;
-    width: 900px;
+    margin: 0 auto;
+    width: 50vw;
 }
 
 .message {
@@ -38,4 +39,14 @@ main {
 
 .back-button:hover {
     background-color: #3071a9;
+}
+
+@media (max-width : 1184px){
+    .message-box {
+        width: 80vw;
+    }
+
+    .message {
+        font-size: 24px;
+    }
 }
