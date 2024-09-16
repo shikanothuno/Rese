@@ -21,13 +21,12 @@
             メールが届いてない場合は、
             下記から再送してください。<br>
         </div>
-        <form action="POST" action="{{ route("verification.send") }}">
+        <form action="POST" action="{{ route('verification.send') }}">
             @csrf
-            <button>
+            <button type="submit">
                 メールアドレスリンクの再送
             </button>
         </form>
-
     </div>
 
 </main>
