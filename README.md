@@ -193,7 +193,7 @@ DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 
 MAIL_MAILER=smtp
-MAIL_HOST=mailhog
+MAIL_HOST=mail
 MAIL_PORT=1025
 
 ```

@@ -33,15 +33,17 @@ class ShopImageController extends Controller
         }else{
             $is_s3 = false;
         }
+        $image = $request->file("image");
 
-        $image_name = $request->input("image_name");
+        $image_name = $request->input("image_name") . "." . $image->getClientOriginalExtension();
+        
         $shop_id = $request->input("shop_id");
 
         if($is_s3){
-            $path = Storage::disk("s3")->putFileAs("images",$request->file("image"),$image_name);
+            $path = Storage::disk("s3")->putFileAs("images",$image,$image_name);
             $url = Storage::disk("s3")->url($path);
         }else{
-            $path = $request->file("image")->storeAs("images",$image_name,"public");
+            $path = $image->storeAs("images",$image_name,"public");
             $url = Storage::url($path);
         }
 
