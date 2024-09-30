@@ -218,9 +218,12 @@ php artisan key:generate
 ```
 php artisan storage:link
 ```
+12. 以下のコマンドでマイグレーションファイルを再生成し、ダミーデータを作成する
+```
+php artinsa migrate:fresh --seed
+```
 
-
-12. 以下のユーザメールとパスワードを使ってログインする  
+13. 以下のユーザメールとパスワードを使ってログインする  
 管理者
 ```
 email:admin@example.com
@@ -237,7 +240,7 @@ email:test0example.com
 password:password
 ```
 
-13. アプリの機能を確認する  
+14. アプリの機能を確認する  
 
 ## ユーザー登録手順
 1.新規登録画面からユーザー名、メールアドレス、パスワードを登録する  
