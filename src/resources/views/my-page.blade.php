@@ -25,12 +25,15 @@
                             <div class="reservation-index">予約{{ $loop->iteration }}</div>
                         </div>
                         <div class="info-header-right">
+                            <a href="{{ route("payment") }}"><img class="payment-button"
+                                src="{{ asset("images/payment_button.png") }}" alt=""></a>
                             <a href="{{ route("qrcode",$reservation->id) }}"><img class="qrcode-button"
                                 src="{{ asset("images/qrcode_button.png") }}" alt=""></a>
                             <a href="{{ route("reservation.edit",$reservation->id) }}"><img class="update-button"
                                 src="{{ asset("images/update_button.png") }}" alt=""></a>
                             <a href="#" onclick="event.preventDefault();document.getElementById('{{ 'reservation-delete-form' . $reservation->id }}').submit();"><img class="delete-button"
                                 src="{{ asset("images/close_button.png") }}" alt=""></a>
+                            
                             <form id={{ 'reservation-delete-form' . $reservation->id }} action="{{ route("reservation.delete",$reservation->id) }}" method="POST" style="display: none;">
                                 @csrf
                                 @method("DELETE")

@@ -50,6 +50,10 @@
     padding-left: 50px;
 }
 
+.payment-button {
+    width: 40px;
+}
+
 .qrcode-button {
     width: 40px;
 }
